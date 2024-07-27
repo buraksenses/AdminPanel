@@ -4,6 +4,7 @@ using Confluent.Kafka;
 using CQRS.Core.Consumers;
 using CQRS.Core.Events;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace AdminPanel.BuildingConfiguration.Query.Application.Consumers;
@@ -11,12 +12,14 @@ namespace AdminPanel.BuildingConfiguration.Query.Application.Consumers;
 public class EventConsumer : IEventConsumer
 {
     private readonly IMediator _mediator;
+    private readonly ILogger<EventConsumer> _logger;
     private readonly ConsumerConfig _config;
 
-    public EventConsumer(IOptions<ConsumerConfig> config, IMediator mediator)
+    public EventConsumer(IOptions<ConsumerConfig> config, IMediator mediator, ILogger<EventConsumer> logger)
     {
         _config = config.Value;
         _mediator = mediator;
+        _logger = logger;
     }
     
     public void Consume(string topic)
@@ -43,6 +46,8 @@ public class EventConsumer : IEventConsumer
                 var eventType = ResolveEventType(eventName);
                 
                 HandleMessage(consumeResult.Message.Value, eventType);
+                
+                _logger.LogInformation(eventName);
             }
             catch (ConsumeException e)
             {
@@ -70,10 +75,8 @@ public class EventConsumer : IEventConsumer
     
     private static Type ResolveEventType(string eventTypeName)
     {
-        // Namespace ve assembly adını ekleyerek tam tip adını oluştur
-        var fullyQualifiedTypeName = $"EcoVerse.StockManagement.Query.Application.Notifications.{eventTypeName}, EcoVerse.StockManagement.Query.Application";
-
-        // Tipi çözümle
+        var fullyQualifiedTypeName = $"AdminPanel.BuildingConfiguration.Query.Application.Notifications.{eventTypeName}, AdminPanel.BuildingConfiguration.Query.Application";
+        
         var eventType = Type.GetType(fullyQualifiedTypeName);
 
         if (eventType == null)

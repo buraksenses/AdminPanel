@@ -4,7 +4,7 @@ using MediatR;
 
 namespace AdminPanel.BuildingConfiguration.Query.Application.Handlers;
 
-public class BuildingRemovedNotificationHandler : INotificationHandler<BuildingRemovedNotification>
+public class BuildingRemovedNotificationHandler : INotificationHandler<BuildingRemovedEvent>
 {
     private readonly IBuildingRepository _repository;
 
@@ -13,9 +13,9 @@ public class BuildingRemovedNotificationHandler : INotificationHandler<BuildingR
         _repository = repository;
     }
     
-    public async Task Handle(BuildingRemovedNotification notification, CancellationToken cancellationToken)
+    public async Task Handle(BuildingRemovedEvent @event, CancellationToken cancellationToken)
     {
-        var building = await _repository.GetByIdAsync(notification.Id);
+        var building = await _repository.GetByIdAsync(@event.Id);
 
         if (building == null)
             throw new Exception("Building not found!");

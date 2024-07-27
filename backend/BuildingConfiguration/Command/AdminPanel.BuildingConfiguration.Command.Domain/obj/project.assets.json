@@ -293,6 +293,19 @@
           "lib/net7.0/ZstdSharp.dll": {}
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "CQRS.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "CQRS.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -791,6 +804,11 @@
         "zstdsharp.port.nuspec"
       ]
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../../Common/Common.csproj",
+      "msbuildProject": "../../Common/Common.csproj"
+    },
     "CQRS.Core/1.0.0": {
       "type": "project",
       "path": "../../CQRS.Core/CQRS.Core.csproj",
@@ -799,7 +817,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "CQRS.Core >= 1.0.0"
+      "CQRS.Core >= 1.0.0",
+      "Common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -827,6 +846,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Common\\Common.csproj": {
+              "projectPath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Common\\Common.csproj"
+            },
             "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\CQRS.Core\\CQRS.Core.csproj": {
               "projectPath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\CQRS.Core\\CQRS.Core.csproj"
             }

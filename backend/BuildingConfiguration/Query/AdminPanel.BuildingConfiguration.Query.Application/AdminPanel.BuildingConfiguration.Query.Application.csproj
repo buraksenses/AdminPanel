@@ -12,8 +12,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="librdkafka.redist" Version="2.5.0" />
       <PackageReference Include="MediatR" Version="12.4.0" />
-      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="2.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>

@@ -4,6 +4,68 @@
     "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Query\\AdminPanel.BuildingConfiguration.Query.Application\\AdminPanel.BuildingConfiguration.Query.Application.csproj": {}
   },
   "projects": {
+    "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\Burak\\.nuget\\packages\\",
+        "outputPath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Burak\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\CQRS.Core\\CQRS.Core.csproj": {
+                "projectPath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\CQRS.Core\\CQRS.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\CQRS.Core\\CQRS.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -120,7 +182,11 @@
             },
             "Microsoft.Extensions.Hosting.Abstractions": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[8.0.0, )"
+            },
+            "librdkafka.redist": {
+              "target": "Package",
+              "version": "[2.5.0, )"
             }
           },
           "imports": [
@@ -227,6 +293,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Common\\Common.csproj": {
+                "projectPath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Common\\Common.csproj"
+              },
               "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\CQRS.Core\\CQRS.Core.csproj": {
                 "projectPath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\CQRS.Core\\CQRS.Core.csproj"
               },
@@ -252,6 +321,14 @@
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.7, )"
             },

@@ -14,6 +14,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\Shared\AdminPanel.Shared\AdminPanel.Shared.csproj" />
+      <ProjectReference Include="..\..\Common\Common.csproj" />
       <ProjectReference Include="..\AdminPanel.BuildingConfiguration.Command.Application\AdminPanel.BuildingConfiguration.Command.Application.csproj" />
       <ProjectReference Include="..\AdminPanel.BuildingConfiguration.Command.Persistence\AdminPanel.BuildingConfiguration.Command.Persistence.csproj" />
     </ItemGroup>

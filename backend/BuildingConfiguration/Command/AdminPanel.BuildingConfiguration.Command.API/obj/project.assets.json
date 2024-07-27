@@ -1773,7 +1773,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "CQRS.Core": "1.0.0"
+          "CQRS.Core": "1.0.0",
+          "Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/AdminPanel.BuildingConfiguration.Command.Domain.dll": {}
@@ -1809,6 +1810,19 @@
         },
         "runtime": {
           "bin/placeholder/AdminPanel.Shared.dll": {}
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "CQRS.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
         }
       },
       "CQRS.Core/1.0.0": {
@@ -5541,6 +5555,11 @@
       "path": "../../../Shared/AdminPanel.Shared/AdminPanel.Shared.csproj",
       "msbuildProject": "../../../Shared/AdminPanel.Shared/AdminPanel.Shared.csproj"
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../../Common/Common.csproj",
+      "msbuildProject": "../../Common/Common.csproj"
+    },
     "CQRS.Core/1.0.0": {
       "type": "project",
       "path": "../../CQRS.Core/CQRS.Core.csproj",
@@ -5552,6 +5571,7 @@
       "AdminPanel.BuildingConfiguration.Command.Application >= 1.0.0",
       "AdminPanel.BuildingConfiguration.Command.Persistence >= 1.0.0",
       "AdminPanel.Shared >= 1.0.0",
+      "Common >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.4",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
@@ -5586,6 +5606,9 @@
             },
             "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Command\\AdminPanel.BuildingConfiguration.Command.Persistence\\AdminPanel.BuildingConfiguration.Command.Persistence.csproj": {
               "projectPath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Command\\AdminPanel.BuildingConfiguration.Command.Persistence\\AdminPanel.BuildingConfiguration.Command.Persistence.csproj"
+            },
+            "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Common\\Common.csproj": {
+              "projectPath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Common\\Common.csproj"
             },
             "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Shared\\AdminPanel.Shared\\AdminPanel.Shared.csproj": {
               "projectPath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Shared\\AdminPanel.Shared\\AdminPanel.Shared.csproj"

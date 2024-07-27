@@ -14,7 +14,6 @@ Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminP
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\Confluent.Kafka.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\CQRS.Core.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\CQRS.Core.pdb

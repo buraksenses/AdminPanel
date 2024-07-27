@@ -18,11 +18,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BuildingDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BuildingConnectionString")));
     
-builder.Services.AddHostedService<ConsumerHostedService>();
 
 builder.Services.Configure<ConsumerConfig>(builder.Configuration.GetSection(nameof(ConsumerConfig)));
 builder.Services.AddScoped<IEventConsumer, EventConsumer>();
 builder.Services.AddScoped<IBuildingRepository, BuildingRepository>();
+
+builder.Services.AddHostedService<ConsumerHostedService>();
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(BuildingRemovedNotificationHandler).Assembly));
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fMB5tE5C/1v+p8S+JivbwUMxc33jjsvYpy6+K3zTYLJehd3K4UIIchzdDTPSHU+89ZsTApyR3jyx7vECF/wAGA==",
+  "dgSpecHash": "PedPi/FSdS3TYBXoj1jrl2KwKWbxUu6Q+xH6UVDEIHkn4Uuer8z6vvMfNPDIvk0o/FDXx5IPAJOJ+kqzzZoGyw==",
   "success": true,
   "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Command\\AdminPanel.BuildingConfiguration.Command.Application\\AdminPanel.BuildingConfiguration.Command.Application.csproj",
   "expectedPackageFiles": [

@@ -33,7 +33,7 @@ builder.Services.Configure<MongoDbConfig>(builder.Configuration.GetSection(nameo
 builder.Services.Configure<ProducerConfig>(builder.Configuration.GetSection(nameof(ProducerConfig)));
 
 builder.Services.AddSingleton<IMongoClient, MongoClient>(
-    sp => new MongoClient(builder.Configuration.GetValue<string>("MongoDbSettings:ConnectionString")));
+    sp => new MongoClient(builder.Configuration.GetValue<string>("MongoDbConfig:ConnectionString")));
 
 
 builder.Services.AddScoped<IEventStoreRepository, EventStoreRepository>();

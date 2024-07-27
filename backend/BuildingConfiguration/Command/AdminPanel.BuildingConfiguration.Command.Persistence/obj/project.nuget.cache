@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ECntr9Idw+KwDqhLslPEechdUnOVkEy8RrSLjwI6lrWVPshtht0ZFUr3xJ+kAENDoO1CdleCOL3I0yTiJ+X92w==",
+  "dgSpecHash": "yCey6d0BQpbKK1DdjuChZ7U0sHNE/VXnrEmmKsaVfuvEppd5wOZCeKQu3qs5XtBpik5zJr3rr0Q4mbiZpzCh6A==",
   "success": true,
   "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Command\\AdminPanel.BuildingConfiguration.Command.Persistence\\AdminPanel.BuildingConfiguration.Command.Persistence.csproj",
   "expectedPackageFiles": [

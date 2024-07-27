@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Mh3HcyVggUD34GuNpTV1qneyEG+RorugJzRGSQVLtTuTF6wbRsX0HKbm32H15mIDu5HR0CdcNRhTcDN1hy9HRg==",
+  "dgSpecHash": "B2cez5N8ur48GvxDX6/Krlvknf3IPsy72FKAZSwXtdsToMYuUNmIwH/zi338S1GqUiZVjlWhSJd+qnTPuDoXsw==",
   "success": true,
   "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Command\\AdminPanel.BuildingConfiguration.Command.API\\AdminPanel.BuildingConfiguration.Command.API.csproj",
   "expectedPackageFiles": [

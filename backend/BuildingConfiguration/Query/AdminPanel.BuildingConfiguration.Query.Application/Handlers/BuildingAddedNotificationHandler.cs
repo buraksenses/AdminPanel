@@ -5,7 +5,7 @@ using MediatR;
 
 namespace AdminPanel.BuildingConfiguration.Query.Application.Handlers;
 
-public class BuildingAddedNotificationHandler : INotificationHandler<BuildingCreatedNotification>
+public class BuildingAddedNotificationHandler : INotificationHandler<BuildingCreatedEvent>
 {
     private readonly IBuildingRepository _repository;
 
@@ -14,14 +14,14 @@ public class BuildingAddedNotificationHandler : INotificationHandler<BuildingCre
         _repository = repository;
     }
     
-    public async Task Handle(BuildingCreatedNotification notification, CancellationToken cancellationToken)
+    public async Task Handle(BuildingCreatedEvent @event, CancellationToken cancellationToken)
     {
         await _repository.CreateAsync(new Building
         {
-            Id = notification.Id,
-            BuildingCost = notification.BuildingCost,
-            BuildingType = notification.BuildingType,
-            ConstructionTime = notification.ConstructionTime
+            Id = @event.Id,
+            BuildingCost = @event.BuildingCost,
+            BuildingType = @event.BuildingType,
+            ConstructionTime = @event.ConstructionTime
         });
     }
 }

@@ -12,11 +12,12 @@
     "http": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5129",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "KAFKA_TOPIC": "Building_Events"
       }
     },
     "https": {

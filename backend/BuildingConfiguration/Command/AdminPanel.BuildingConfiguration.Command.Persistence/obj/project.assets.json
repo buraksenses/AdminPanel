@@ -470,13 +470,27 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "CQRS.Core": "1.0.0"
+          "CQRS.Core": "1.0.0",
+          "Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/AdminPanel.BuildingConfiguration.Command.Domain.dll": {}
         },
         "runtime": {
           "bin/placeholder/AdminPanel.BuildingConfiguration.Command.Domain.dll": {}
+        }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "CQRS.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
         }
       },
       "CQRS.Core/1.0.0": {
@@ -1158,6 +1172,11 @@
       "type": "project",
       "path": "../AdminPanel.BuildingConfiguration.Command.Domain/AdminPanel.BuildingConfiguration.Command.Domain.csproj",
       "msbuildProject": "../AdminPanel.BuildingConfiguration.Command.Domain/AdminPanel.BuildingConfiguration.Command.Domain.csproj"
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../../Common/Common.csproj",
+      "msbuildProject": "../../Common/Common.csproj"
     },
     "CQRS.Core/1.0.0": {
       "type": "project",
