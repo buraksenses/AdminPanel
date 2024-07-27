@@ -1,0 +1,388 @@
+{
+  "format": 1,
+  "restore": {
+    "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.API\\AdminPanel.Identity.API.csproj": {}
+  },
+  "projects": {
+    "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.API\\AdminPanel.Identity.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.API\\AdminPanel.Identity.API.csproj",
+        "projectName": "AdminPanel.Identity.API",
+        "projectPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.API\\AdminPanel.Identity.API.csproj",
+        "packagesPath": "C:\\Users\\Burak\\.nuget\\packages\\",
+        "outputPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Burak\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Application\\AdminPanel.Identity.Application.csproj": {
+                "projectPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Application\\AdminPanel.Identity.Application.csproj"
+              },
+              "Z:\\.NETProjects\\AdminPanel\\Shared\\AdminPanel.Shared\\AdminPanel.Shared.csproj": {
+                "projectPath": "Z:\\.NETProjects\\AdminPanel\\Shared\\AdminPanel.Shared\\AdminPanel.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Application\\AdminPanel.Identity.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Application\\AdminPanel.Identity.Application.csproj",
+        "projectName": "AdminPanel.Identity.Application",
+        "projectPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Application\\AdminPanel.Identity.Application.csproj",
+        "packagesPath": "C:\\Users\\Burak\\.nuget\\packages\\",
+        "outputPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Burak\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Domain\\AdminPanel.Identity.Domain.csproj": {
+                "projectPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Domain\\AdminPanel.Identity.Domain.csproj"
+              },
+              "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Persistence\\AdminPanel.Identity.Persistence.csproj": {
+                "projectPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Persistence\\AdminPanel.Identity.Persistence.csproj"
+              },
+              "Z:\\.NETProjects\\AdminPanel\\Shared\\AdminPanel.Shared\\AdminPanel.Shared.csproj": {
+                "projectPath": "Z:\\.NETProjects\\AdminPanel\\Shared\\AdminPanel.Shared\\AdminPanel.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Domain\\AdminPanel.Identity.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Domain\\AdminPanel.Identity.Domain.csproj",
+        "projectName": "AdminPanel.Identity.Domain",
+        "projectPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Domain\\AdminPanel.Identity.Domain.csproj",
+        "packagesPath": "C:\\Users\\Burak\\.nuget\\packages\\",
+        "outputPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Burak\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Persistence\\AdminPanel.Identity.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Persistence\\AdminPanel.Identity.Persistence.csproj",
+        "projectName": "AdminPanel.Identity.Persistence",
+        "projectPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Persistence\\AdminPanel.Identity.Persistence.csproj",
+        "packagesPath": "C:\\Users\\Burak\\.nuget\\packages\\",
+        "outputPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Burak\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Domain\\AdminPanel.Identity.Domain.csproj": {
+                "projectPath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Domain\\AdminPanel.Identity.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "Z:\\.NETProjects\\AdminPanel\\Shared\\AdminPanel.Shared\\AdminPanel.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "Z:\\.NETProjects\\AdminPanel\\Shared\\AdminPanel.Shared\\AdminPanel.Shared.csproj",
+        "projectName": "AdminPanel.Shared",
+        "projectPath": "Z:\\.NETProjects\\AdminPanel\\Shared\\AdminPanel.Shared\\AdminPanel.Shared.csproj",
+        "packagesPath": "C:\\Users\\Burak\\.nuget\\packages\\",
+        "outputPath": "Z:\\.NETProjects\\AdminPanel\\Shared\\AdminPanel.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Burak\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

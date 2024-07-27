@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1fnz2IEvua3upURUiawr6G6ONf9OcaYNV7Ao+CMG8lA=",
+  "Source": "AdminPanel.Identity.API",
+  "BasePath": "_content/AdminPanel.Identity.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

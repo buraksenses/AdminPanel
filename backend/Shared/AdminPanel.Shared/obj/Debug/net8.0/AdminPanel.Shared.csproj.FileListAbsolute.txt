@@ -1,0 +1,12 @@
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\bin\Debug\net8.0\AdminPanel.Shared.deps.json
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\bin\Debug\net8.0\AdminPanel.Shared.dll
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\bin\Debug\net8.0\AdminPanel.Shared.pdb
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\obj\Debug\net8.0\AdminPanel.Shared.csproj.AssemblyReference.cache
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\obj\Debug\net8.0\AdminPanel.Shared.GeneratedMSBuildEditorConfig.editorconfig
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\obj\Debug\net8.0\AdminPanel.Shared.AssemblyInfoInputs.cache
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\obj\Debug\net8.0\AdminPanel.Shared.AssemblyInfo.cs
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\obj\Debug\net8.0\AdminPanel.Shared.csproj.CoreCompileInputs.cache
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\obj\Debug\net8.0\AdminPanel.Shared.dll
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\obj\Debug\net8.0\refint\AdminPanel.Shared.dll
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\obj\Debug\net8.0\AdminPanel.Shared.pdb
+Z:\.NETProjects\AdminPanel\Shared\AdminPanel.Shared\obj\Debug\net8.0\ref\AdminPanel.Shared.dll
