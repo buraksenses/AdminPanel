@@ -1,0 +1,12 @@
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.deps.json
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.AssemblyInfoInputs.cache
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.AssemblyInfo.cs
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.csproj.CoreCompileInputs.cache
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.sourcelink.json
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\obj\Debug\net8.0\refint\AdminPanel.BuildingConfiguration.Query.Persistence.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\obj\Debug\net8.0\ref\AdminPanel.BuildingConfiguration.Query.Persistence.dll

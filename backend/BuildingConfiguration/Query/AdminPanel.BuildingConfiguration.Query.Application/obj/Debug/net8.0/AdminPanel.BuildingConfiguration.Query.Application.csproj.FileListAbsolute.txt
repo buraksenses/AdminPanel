@@ -1,0 +1,12 @@
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.deps.json
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.GeneratedMSBuildEditorConfig.editorconfig
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.AssemblyInfoInputs.cache
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.AssemblyInfo.cs
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.csproj.CoreCompileInputs.cache
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.sourcelink.json
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\refint\AdminPanel.BuildingConfiguration.Query.Application.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\ref\AdminPanel.BuildingConfiguration.Query.Application.dll

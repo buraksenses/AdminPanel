@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\AdminPanel.BuildingConfiguration.Query.API.props" />
+</Project>

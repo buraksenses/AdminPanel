@@ -1,0 +1,6 @@
+@AdminPanel.BuildingConfiguration.Command_HostAddress = http://localhost:5227
+
+GET {{AdminPanel.BuildingConfiguration.Command_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

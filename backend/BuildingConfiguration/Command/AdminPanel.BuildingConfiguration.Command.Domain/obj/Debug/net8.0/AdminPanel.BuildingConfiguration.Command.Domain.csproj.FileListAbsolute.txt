@@ -1,0 +1,16 @@
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.deps.json
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\bin\Debug\net8.0\CQRS.Core.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\bin\Debug\net8.0\CQRS.Core.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.csproj.AssemblyReference.cache
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.GeneratedMSBuildEditorConfig.editorconfig
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.AssemblyInfoInputs.cache
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.AssemblyInfo.cs
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.csproj.CoreCompileInputs.cache
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.sourcelink.json
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\AdminPan.5F5E73B3.Up2Date
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\refint\AdminPanel.BuildingConfiguration.Command.Domain.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\ref\AdminPanel.BuildingConfiguration.Command.Domain.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "AdminPanel.BuildingConfiguration.Query.Persistence/1.0.0": {
+        "runtime": {
+          "AdminPanel.BuildingConfiguration.Query.Persistence.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AdminPanel.BuildingConfiguration.Query.Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

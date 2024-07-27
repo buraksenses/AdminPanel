@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "KnftsM1IUrrmGvlvcHHOEvAYHwldll2Ziqb85Xq7EE4=",
+  "Source": "AdminPanel.BuildingConfiguration.Query.API",
+  "BasePath": "_content/AdminPanel.BuildingConfiguration.Query.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

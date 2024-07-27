@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "AW/WLJjNHRPI1sXlkQ3+inx45nmjq2lRCLOi1r1RAa0=",
+  "Source": "AdminPanel.BuildingConfiguration.Command.API",
+  "BasePath": "_content/AdminPanel.BuildingConfiguration.Command.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
