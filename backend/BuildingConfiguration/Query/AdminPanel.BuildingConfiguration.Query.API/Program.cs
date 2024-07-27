@@ -1,6 +1,11 @@
 using AdminPanel.BuildingConfiguration.Query.Application.Consumers;
+using AdminPanel.BuildingConfiguration.Query.Application.Handlers;
+using AdminPanel.BuildingConfiguration.Query.Domain.Repositories;
 using AdminPanel.BuildingConfiguration.Query.Persistence.DataAccess;
+using AdminPanel.BuildingConfiguration.Query.Persistence.Repositories;
+using AdminPanel.Shared.Exceptions;
 using Confluent.Kafka;
+using CQRS.Core.Consumers;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +21,10 @@ builder.Services.AddDbContext<BuildingDbContext>(options =>
 builder.Services.AddHostedService<ConsumerHostedService>();
 
 builder.Services.Configure<ConsumerConfig>(builder.Configuration.GetSection(nameof(ConsumerConfig)));
+builder.Services.AddScoped<IEventConsumer, EventConsumer>();
+builder.Services.AddScoped<IBuildingRepository, BuildingRepository>();
 
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(BuildingRemovedNotificationHandler).Assembly));
 
 var app = builder.Build();
 
@@ -27,7 +35,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<GlobalExceptionHandler>();
+
 app.UseHttpsRedirection();
+
 app.UseAuthorization();
+
+app.UseAuthentication();
+
 app.MapControllers();
+
 app.Run();
