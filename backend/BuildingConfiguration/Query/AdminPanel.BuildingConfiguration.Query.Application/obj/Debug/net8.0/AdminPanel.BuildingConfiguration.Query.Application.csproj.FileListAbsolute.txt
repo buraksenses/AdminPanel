@@ -10,3 +10,13 @@ Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminP
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\refint\AdminPanel.BuildingConfiguration.Query.Application.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.pdb
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\ref\AdminPanel.BuildingConfiguration.Query.Application.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Domain.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\bin\Debug\net8.0\Confluent.Kafka.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\bin\Debug\net8.0\CQRS.Core.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\bin\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Domain.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\bin\Debug\net8.0\CQRS.Core.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\bin\Debug\net8.0\Confluent.Kafka.xml
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Application.csproj.AssemblyReference.cache
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Application\obj\Debug\net8.0\AdminPan.99FB3F38.Up2Date

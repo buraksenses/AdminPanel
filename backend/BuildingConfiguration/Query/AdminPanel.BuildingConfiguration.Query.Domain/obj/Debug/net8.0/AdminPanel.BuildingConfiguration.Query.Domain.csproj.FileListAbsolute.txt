@@ -10,3 +10,7 @@ Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminP
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Domain\obj\Debug\net8.0\refint\AdminPanel.BuildingConfiguration.Query.Domain.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Domain\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Domain.pdb
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Domain\obj\Debug\net8.0\ref\AdminPanel.BuildingConfiguration.Query.Domain.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Domain\bin\Debug\net8.0\CQRS.Core.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Domain\bin\Debug\net8.0\CQRS.Core.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Domain\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Domain.csproj.AssemblyReference.cache
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Domain\obj\Debug\net8.0\AdminPan.59DB7DBF.Up2Date

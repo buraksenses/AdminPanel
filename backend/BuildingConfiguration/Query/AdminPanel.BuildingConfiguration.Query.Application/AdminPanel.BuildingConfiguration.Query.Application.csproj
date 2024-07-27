@@ -6,4 +6,19 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\AdminPanel.BuildingConfiguration.Query.Persistence\AdminPanel.BuildingConfiguration.Query.Persistence.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.4.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="2.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Confluent.Kafka">
+        <HintPath>C:\Users\Burak\.nuget\packages\confluent.kafka\2.5.0\lib\net6.0\Confluent.Kafka.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

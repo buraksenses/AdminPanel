@@ -9,7 +9,19 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\AdminPanel.Shared\AdminPanel.Shared.csproj" />
+      <ProjectReference Include="..\AdminPanel.BuildingConfiguration.Query.Application\AdminPanel.BuildingConfiguration.Query.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Confluent.Kafka">
+        <HintPath>C:\Users\Burak\.nuget\packages\confluent.kafka\2.5.0\lib\net6.0\Confluent.Kafka.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>
