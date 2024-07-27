@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "klEFPs09lZNuDGetDIYuEdeliTDyXqCSbAAujLUzzafsPyknLIhT/ai6rslRLzhZpytsMIYhvZcu+Gk7e6xlnQ==",
+  "dgSpecHash": "2SF4L9hySGjL92y66QkeqYNplPAOIFjDIeCxYcNJZpdtSlFgLiR68Ij1zcVQXhL9fniNTlKrx63rzrUfs+M6oQ==",
   "success": true,
-  "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Domain\\AdminPanel.Identity.Domain.csproj",
+  "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Identity\\AdminPanel.Identity.Domain\\AdminPanel.Identity.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.7\\microsoft.aspnetcore.cryptography.internal.8.0.7.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.7\\microsoft.aspnetcore.cryptography.keyderivation.8.0.7.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GynG2fJFbTJfb0fm2UBwT4CRg6seFvnUdrqByKwC92bHaIo6KVozGeqyS1i8clpNz2PaqZYyhzLad3L2xYCb/A==",
+  "dgSpecHash": "XlrI5FsjPtdv5l/JqoCq5Bkrt6x17DMOBIXyRv4vkIliOQbLjy4CXHasmsm1RGI72jEmySxLOSf2/UttPNVPPQ==",
   "success": true,
-  "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Persistence\\AdminPanel.Identity.Persistence.csproj",
+  "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Identity\\AdminPanel.Identity.Persistence\\AdminPanel.Identity.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Burak\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

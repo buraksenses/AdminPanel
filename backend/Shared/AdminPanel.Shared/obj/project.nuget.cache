@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mfEMw84DrSDIEXT2PzxRkv22gl9sypAsgJ6lLfmAsN7ddbC/OGcuAnd5VI27anQBFd590usBSWFFZd9mM1E+LQ==",
+  "dgSpecHash": "LsZWbBqJz2RfaE+7vqKhVcGeXwRH7j1EiBr9yLaUw17yMIm2xg+YixMSWYqf0ZQIGqMfR9428Hbqevvg5YG/Sg==",
   "success": true,
-  "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\Shared\\AdminPanel.Shared\\AdminPanel.Shared.csproj",
+  "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Shared\\AdminPanel.Shared\\AdminPanel.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

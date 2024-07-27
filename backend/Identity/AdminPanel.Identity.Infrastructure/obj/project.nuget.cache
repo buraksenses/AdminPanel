@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qmJAwOtHegur9nloVHql1hQ4fj5ZiqsjZ+jLTKw+PblNVGwRDAX761JSmiRDW3js9CqEXlmLEkO0KZCiHsSpaA==",
+  "dgSpecHash": "OuNUp1rnJaTtjLDvJeF0aiUyTG3CEwfRG47Ume27uu/iHCB9NNQqkCcEOUtnTeId4lH8xQYA+zDFs0G4QVi6bg==",
   "success": true,
-  "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Infrastructure\\AdminPanel.Identity.Infrastructure.csproj",
+  "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Identity\\AdminPanel.Identity.Infrastructure\\AdminPanel.Identity.Infrastructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

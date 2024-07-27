@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bC+qPZyXw3RkqacLii8rC3j9GpYXNS6P2jPcUNw9+jxXFyx/BBHnufQX9FBIEGYnie45TbCsMKokz6EcCATxLw==",
+  "dgSpecHash": "/t+3e3SgwJq7kiIYBvjr5sHDiLViDC4q6wEKRWqb+K+lCEk62q1qQ1UuoiJaGmBmAon4Cb22Bb9dL31RU3NLUw==",
   "success": true,
-  "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\Identity\\AdminPanel.Identity.Application\\AdminPanel.Identity.Application.csproj",
+  "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Identity\\AdminPanel.Identity.Application\\AdminPanel.Identity.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Burak\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
