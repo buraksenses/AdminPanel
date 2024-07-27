@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdminPanel.BuildingConfiguration.Query.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4180dce3f137f764446cc3d55df4253c5c525f66")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db2de2ee5df4c6eac74efcbc78bbc503a874b947")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdminPanel.BuildingConfiguration.Query.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdminPanel.BuildingConfiguration.Query.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
