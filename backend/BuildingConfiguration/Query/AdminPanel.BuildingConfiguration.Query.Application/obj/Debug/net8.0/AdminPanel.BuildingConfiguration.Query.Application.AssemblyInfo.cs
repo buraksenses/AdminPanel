@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdminPanel.BuildingConfiguration.Query.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+834d3d662a68d7525031b41b210bf6293559816c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+791cc023788e5f56adb5aea9b94fed6c73fb3654")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdminPanel.BuildingConfiguration.Query.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdminPanel.BuildingConfiguration.Query.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

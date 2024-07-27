@@ -5,11 +5,11 @@ using MediatR;
 
 namespace AdminPanel.BuildingConfiguration.Query.Application.Handlers;
 
-public class BuildingAddedEventHandler : INotificationHandler<BuildingCreatedNotification>
+public class BuildingAddedNotificationHandler : INotificationHandler<BuildingCreatedNotification>
 {
     private readonly IBuildingRepository _repository;
 
-    public BuildingAddedEventHandler(IBuildingRepository repository)
+    public BuildingAddedNotificationHandler(IBuildingRepository repository)
     {
         _repository = repository;
     }

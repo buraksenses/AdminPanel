@@ -2298,6 +2298,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "AdminPanel.BuildingConfiguration.Query.Persistence": "1.0.0",
+          "AdminPanel.Shared": "1.0.0",
           "MediatR": "12.4.0",
           "Microsoft.Extensions.Hosting.Abstractions": "2.2.0"
         },
