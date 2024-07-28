@@ -176,6 +176,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.2.3, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.2.3, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.4.0, )"
@@ -183,10 +191,6 @@
             "Microsoft.Extensions.Hosting.Abstractions": {
               "target": "Package",
               "version": "[8.0.0, )"
-            },
-            "librdkafka.redist": {
-              "target": "Package",
-              "version": "[2.5.0, )"
             }
           },
           "imports": [

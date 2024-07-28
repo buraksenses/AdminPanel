@@ -16,8 +16,7 @@
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5228",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "KAFKA_TOPIC": "Building_Events"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "https": {

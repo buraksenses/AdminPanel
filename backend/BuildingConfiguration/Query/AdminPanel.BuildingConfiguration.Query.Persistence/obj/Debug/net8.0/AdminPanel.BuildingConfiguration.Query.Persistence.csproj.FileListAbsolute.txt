@@ -21,3 +21,5 @@ Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminP
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\Confluent.Kafka.xml
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Query.Persistence.csproj.AssemblyReference.cache
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\obj\Debug\net8.0\AdminPan.EB1431B2.Up2Date
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\Common.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Query\AdminPanel.BuildingConfiguration.Query.Persistence\bin\Debug\net8.0\Common.pdb

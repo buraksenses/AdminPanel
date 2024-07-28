@@ -2,19 +2,16 @@
 using CQRS.Core.Domain;
 using CQRS.Core.Events;
 using CQRS.Core.Infrastructure;
-using CQRS.Core.Producers;
 
 namespace AdminPanel.BuildingConfiguration.Command.Persistence.Stores;
 
 public class EventStore : IEventStore
 {
     private readonly IEventStoreRepository _repository;
-    private readonly IEventProducer _eventProducer;
 
-    public EventStore(IEventStoreRepository repository, IEventProducer eventProducer)
+    public EventStore(IEventStoreRepository repository)
     {
         _repository = repository;
-        _eventProducer = eventProducer;
     }
 
     public async Task SaveEventsAsync(Guid aggregateId, IEnumerable<BaseEvent> events, int expectedVersion)
@@ -42,10 +39,6 @@ public class EventStore : IEventStore
             };
 
             await _repository.SaveAsync(eventModel);
-
-            var topic = Environment.GetEnvironmentVariable("KAFKA_TOPIC");
-
-            await _eventProducer.ProduceAsync(topic, @event);
         }
     }
 

@@ -14,3 +14,5 @@ Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\Admi
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\refint\AdminPanel.BuildingConfiguration.Command.Domain.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\AdminPanel.BuildingConfiguration.Command.Domain.pdb
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\obj\Debug\net8.0\ref\AdminPanel.BuildingConfiguration.Command.Domain.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\bin\Debug\net8.0\Common.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.Domain\bin\Debug\net8.0\Common.pdb

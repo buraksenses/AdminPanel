@@ -1,6 +1,7 @@
 ﻿using AdminPanel.BuildingConfiguration.Command.Domain.Enums;
+using CQRS.Core.Events;
 
-namespace CQRS.Core.Events;
+namespace Common.Events;
 
 public class BuildingCreatedEvent : BaseEvent
 {

@@ -1,14 +1,33 @@
 using AdminPanel.BuildingConfiguration.Query.Application.Consumers;
-using AdminPanel.BuildingConfiguration.Query.Application.Handlers;
 using AdminPanel.BuildingConfiguration.Query.Domain.Repositories;
 using AdminPanel.BuildingConfiguration.Query.Persistence.DataAccess;
 using AdminPanel.BuildingConfiguration.Query.Persistence.Repositories;
 using AdminPanel.Shared.Exceptions;
-using Confluent.Kafka;
-using CQRS.Core.Consumers;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddMassTransit(x =>
+{
+    x.AddConsumer<BuildingCreatedEventConsumer>();
+
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host("rabbitmq://localhost", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+
+        cfg.ReceiveEndpoint("building-create-queue", e =>
+        {
+            e.ConfigureConsumer<BuildingCreatedEventConsumer>(context);
+        });
+    });
+});
+
+builder.Services.AddScoped<BuildingCreatedEventConsumer>();
 
 builder.Services.AddControllers();
 
@@ -17,15 +36,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<BuildingDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BuildingConnectionString")));
-    
 
-builder.Services.Configure<ConsumerConfig>(builder.Configuration.GetSection(nameof(ConsumerConfig)));
-builder.Services.AddScoped<IEventConsumer, EventConsumer>();
 builder.Services.AddScoped<IBuildingRepository, BuildingRepository>();
 
-builder.Services.AddHostedService<ConsumerHostedService>();
-
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(BuildingRemovedNotificationHandler).Assembly));
+//builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(BuildingRemovedNotificationHandler).Assembly));
 
 var app = builder.Build();
 
