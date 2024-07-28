@@ -24,14 +24,9 @@ public class AddBuildingCommandHandler : IRequestHandler<AddBuildingCommand, Sha
         var aggregate = new BuildingAggregate(Guid.NewGuid(), request.BuildingType, request.BuildingCost, request.ConstructionTime);
         
         await _eventSourcingHandler.SaveAsync(aggregate);
-        
-        await _publishEndpoint.Publish<CreateBuildingMessage>(new CreateBuildingMessage
-        {
-                Id = aggregate.Id,
-                BuildingCost = request.BuildingCost,
-                BuildingType = request.BuildingType,
-                ConstructionTime = request.ConstructionTime
-        });
+
+        await _publishEndpoint.Publish<CreateBuildingMessage>(new CreateBuildingMessage(aggregate.Id,
+            request.BuildingType, request.BuildingCost, request.ConstructionTime));
 
         return Shared.DTOs.Response<AddBuildingDto>.Success(
             new AddBuildingDto(request.BuildingType,request.BuildingCost,request.ConstructionTime),

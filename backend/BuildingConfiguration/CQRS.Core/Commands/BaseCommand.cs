@@ -2,7 +2,4 @@
 
 namespace CQRS.Core.Commands;
 
-public abstract class BaseCommand : Message
-{
-    
-}
+public abstract record BaseCommand(Guid Id) : Message(Id);

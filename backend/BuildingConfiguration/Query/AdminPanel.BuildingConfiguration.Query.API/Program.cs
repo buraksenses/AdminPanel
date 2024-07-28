@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<BuildingCreatedEventConsumer>();
+    x.AddConsumer<BuildingRemovedEventConsumer>();
 
     x.UsingRabbitMq((context, cfg) =>
     {
@@ -24,10 +25,16 @@ builder.Services.AddMassTransit(x =>
         {
             e.ConfigureConsumer<BuildingCreatedEventConsumer>(context);
         });
+        
+        cfg.ReceiveEndpoint("building-remove-queue", e =>
+        {
+            e.ConfigureConsumer<BuildingRemovedEventConsumer>(context);
+        });
     });
 });
 
 builder.Services.AddScoped<BuildingCreatedEventConsumer>();
+builder.Services.AddScoped<BuildingRemovedEventConsumer>();
 
 builder.Services.AddControllers();
 

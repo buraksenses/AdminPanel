@@ -20,7 +20,7 @@ public class BuildingCreatedEventConsumer : IConsumer<CreateBuildingMessage>
 
         await _repository.CreateAsync(new Building
         {
-            Id = Guid.NewGuid(),
+            Id = message.Id,
             BuildingCost = message.BuildingCost,
             BuildingType = message.BuildingType,
             ConstructionTime = message.ConstructionTime

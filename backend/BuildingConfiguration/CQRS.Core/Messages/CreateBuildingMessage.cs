@@ -2,11 +2,4 @@
 
 namespace CQRS.Core.Messages;
 
-public class CreateBuildingMessage : Message
-{
-    public BuildingType BuildingType { get; set; }
-
-    public decimal BuildingCost { get; set; }
-
-    public int ConstructionTime { get; set; }
-}
+public record CreateBuildingMessage(Guid Id, BuildingType BuildingType, decimal BuildingCost, int ConstructionTime) : Message(Id);

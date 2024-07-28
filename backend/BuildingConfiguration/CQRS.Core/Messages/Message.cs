@@ -1,6 +1,3 @@
 ﻿namespace CQRS.Core.Messages;
 
-public abstract class Message
-{
-    public Guid Id { get; set; }
-}
+public abstract record Message(Guid Id);
