@@ -15,7 +15,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("./assets/bg.webp");
+  background-image: url("../public/bg.webp");
   background-size: cover;
   background-position: center;
   height: 100vh;

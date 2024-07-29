@@ -2,11 +2,11 @@ import { useState } from "react";
 import "../ConfigurationPage.css";
 
 const buildingTypes = [
-  { type: "Farm", icon: "../../public/academy.webp" },
-  { type: "Academy", icon: "../../public/academy.webp" },
-  { type: "Headquarters", icon: "../../public/academy.webp" },
-  { type: "LumberMill", icon: "../../public/academy.webp" },
-  { type: "Barracks", icon: "../../public/academy.webp" },
+  { type: "Farm", icon: "../../public/farm.png" },
+  { type: "Academy", icon: "../../public/academy.png" },
+  { type: "Headquarters", icon: "../../public/headquarters.png" },
+  { type: "LumberMill", icon: "../../public/lumbermill.png" },
+  { type: "Barracks", icon: "../../public/barracks.png" },
 ];
 
 const ConfigurationPage = () => {
