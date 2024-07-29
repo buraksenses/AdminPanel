@@ -19,7 +19,6 @@ public class BuildingsController : CustomBaseController
     [HttpPost]
     public async Task<IActionResult> AddBuildingAsync(AddBuildingCommand command)
     {
-        //var jwtKey = Utils.GenerateSecureJwtKey();
         var response = await _mediator.Send(command);
         return CreateActionResultInstance(response);
     }

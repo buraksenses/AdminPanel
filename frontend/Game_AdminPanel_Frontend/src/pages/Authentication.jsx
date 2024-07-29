@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../App.css";
 import { useAuth } from "../security/AuthContext";
 import { useNavigate } from "react-router-dom";
+import LoginForm from "../components/LoginForm";
 
 function Authentication() {
   const { login, register } = useAuth();
@@ -62,37 +63,14 @@ function Authentication() {
             Register
           </span>
         </div>
-        <form className="auth-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Username"
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          {!isLogin && (
-            <>
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </>
-          )}
-          <button type="submit">{isLogin ? "Login" : "Register"}</button>
-        </form>
+        <LoginForm
+          handleSubmit={handleSubmit}
+          setConfirmPassword={setConfirmPassword}
+          isLogin={isLogin}
+          setEmail={setEmail}
+          setUsername={setUsername}
+          setPassword={setPassword}
+        />
       </div>
     </div>
   );
