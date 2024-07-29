@@ -1,22 +1,29 @@
 import { useState } from "react";
 import "../ConfigurationPage.css";
 import Modal from "../components/Modal";
+import farmIcon from "../../public/farm.png";
+import lumbermillIcon from "../../public/lumbermill.png";
+import barracksIcon from "../../public/barracks.png";
+import academyIcon from "../../public/academy.png";
+import headquartersIcon from "../../public/headquarters.png";
 import Grid from "../components/Grid";
 
 const buildingTypes = [
-  { type: "Farm", icon: "../../public/farm.png" },
-  { type: "Academy", icon: "../../public/academy.png" },
-  { type: "Headquarters", icon: "../../public/headquarters.png" },
-  { type: "LumberMill", icon: "../../public/lumbermill.png" },
-  { type: "Barracks", icon: "../../public/barracks.png" },
+  { type: "Farm", icon: farmIcon },
+  { type: "Academy", icon: academyIcon },
+  { type: "Headquarters", icon: headquartersIcon },
+  { type: "LumberMill", icon: lumbermillIcon },
+  { type: "Barracks", icon: barracksIcon },
 ];
 
 const ConfigurationPage = () => {
   const [configurations, setConfigurations] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [modalType, setModalType] = useState("");
   const [buildingType, setBuildingType] = useState("");
   const [buildingCost, setBuildingCost] = useState("");
   const [constructionTime, setConstructionTime] = useState("");
+  const [selectedConfig, setSelectedConfig] = useState(null);
   const [error, setError] = useState("");
 
   const handleAddConfiguration = () => {
@@ -39,6 +46,45 @@ const ConfigurationPage = () => {
     setError("");
   };
 
+  const handleUpdateConfiguration = () => {
+    if (
+      !buildingCost ||
+      buildingCost <= 0 ||
+      constructionTime < 30 ||
+      constructionTime > 1800
+    ) {
+      setError("Invalid input. Please check the values.");
+      return;
+    }
+
+    const updatedConfigurations = configurations.map((config) =>
+      config === selectedConfig
+        ? { ...config, buildingCost, constructionTime }
+        : config
+    );
+    setConfigurations(updatedConfigurations);
+    setShowModal(false);
+    setSelectedConfig(null);
+    setBuildingCost("");
+    setConstructionTime("");
+    setError("");
+  };
+
+  const handleRemoveConfiguration = (configToRemove) => {
+    const updatedConfigurations = configurations.filter(
+      (config) => config !== configToRemove
+    );
+    setConfigurations(updatedConfigurations);
+  };
+
+  const openUpdateModal = (config) => {
+    setSelectedConfig(config);
+    setBuildingCost(config.buildingCost);
+    setConstructionTime(config.constructionTime);
+    setModalType("update");
+    setShowModal(true);
+  };
+
   const availableBuildingTypes = buildingTypes.filter(
     (type) =>
       !configurations.find((config) => config.buildingType === type.type)
@@ -47,24 +93,35 @@ const ConfigurationPage = () => {
   return (
     <div className="configuration-page">
       <h1>Building Configuration</h1>
-      <button className="add-button" onClick={() => setShowModal(true)}>
+      <Grid
+        configurations={configurations}
+        buildingTypes={buildingTypes}
+        openUpdateModal={openUpdateModal}
+        handleRemoveConfiguration={handleRemoveConfiguration}
+      />
+      <button
+        className="add-button"
+        onClick={() => {
+          setModalType("add");
+          setShowModal(true);
+        }}
+      >
         Add Configuration
       </button>
-
-      <Grid configurations={configurations} buildingTypes={buildingTypes} />
-
       {showModal && (
         <Modal
           error={error}
-          buildingCost={buildingCost}
           buildingType={buildingType}
           availableBuildingTypes={availableBuildingTypes}
+          buildingCost={buildingCost}
           setBuildingCost={setBuildingCost}
           setBuildingType={setBuildingType}
           constructionTime={constructionTime}
           setConstructionTime={setConstructionTime}
           handleAddConfiguration={handleAddConfiguration}
           setShowModal={setShowModal}
+          modalType={modalType}
+          handleUpdateConfiguration={handleUpdateConfiguration}
         />
       )}
     </div>

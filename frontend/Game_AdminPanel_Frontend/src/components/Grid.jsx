@@ -1,4 +1,10 @@
-function Grid({ configurations, buildingTypes }) {
+function Grid({
+  configurations,
+  buildingTypes,
+  openUpdateModal,
+  handleRemoveConfiguration,
+}) {
+  
   return (
     <div className="grid">
       {configurations.map((config, index) => (
@@ -11,6 +17,12 @@ function Grid({ configurations, buildingTypes }) {
             <h3>{config.buildingType}</h3>
             <p>Cost: {config.buildingCost}</p>
             <p>Time: {config.constructionTime}s</p>
+          </div>
+          <div className="overlay">
+            <button onClick={() => openUpdateModal(config)}>Update</button>
+            <button onClick={() => handleRemoveConfiguration(config)}>
+              Remove
+            </button>
           </div>
         </div>
       ))}
