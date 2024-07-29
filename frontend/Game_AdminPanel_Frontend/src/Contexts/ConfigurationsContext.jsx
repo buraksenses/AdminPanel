@@ -101,12 +101,14 @@ function ConfigurationsProvider({ children }) {
 
     try {
       const response = await axios.put(`${WRITE_BASE_URL}/api/buildings`, {
-        buildingType,
+        id: selectedConfig.id,
         buildingCost,
         constructionTime,
       });
 
-      if (response.data.StatusCode === 200) {
+      console.log(response.data);
+
+      if (response.data.statusCode === 200) {
         setConfigurations(updatedConfigurations);
         setShowModal(false);
         setSelectedConfig(null);

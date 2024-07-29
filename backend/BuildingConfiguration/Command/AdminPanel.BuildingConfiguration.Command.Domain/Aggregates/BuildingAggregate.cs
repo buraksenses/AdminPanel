@@ -48,4 +48,21 @@ public class BuildingAggregate : AggregateRoot
     {
         _id = @event.Id;
     }
+
+    public void UpdateBuilding(BuildingUpdatedEvent @event)
+    {
+        RaiseEvent(new BuildingUpdatedEvent
+        {
+            BuildingCost = @event.BuildingCost,
+            ConstructionTime = @event.ConstructionTime,
+            Id = @event.Id
+        });
+    }
+    
+    public void Apply(BuildingUpdatedEvent @event)
+    {
+        _id = @event.Id;
+        _buildingCost = @event.BuildingCost;
+        _constructionTime = @event.ConstructionTime;
+    }
 }

@@ -37,6 +37,7 @@ builder.Services.AddMassTransit(x =>
 BsonClassMap.RegisterClassMap<BaseEvent>();
 BsonClassMap.RegisterClassMap<BuildingCreatedEvent>();
 BsonClassMap.RegisterClassMap<BuildingRemovedEvent>();
+BsonClassMap.RegisterClassMap<BuildingUpdatedEvent>();
 
 builder.Services.AddControllers();
 
@@ -79,6 +80,16 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(AddBu
 builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssemblyContaining<AddBuildingValidator>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", builder =>
+    {
+        builder.WithOrigins("http://localhost:5173")
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -89,6 +100,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<GlobalExceptionHandler>();
+
+app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();
 

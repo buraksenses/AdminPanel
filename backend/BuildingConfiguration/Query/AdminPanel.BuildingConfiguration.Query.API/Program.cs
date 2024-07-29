@@ -13,6 +13,7 @@ builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<BuildingCreatedEventConsumer>();
     x.AddConsumer<BuildingRemovedEventConsumer>();
+    x.AddConsumer<BuildingUpdatedEventConsumer>();
 
     x.UsingRabbitMq((context, cfg) =>
     {
@@ -30,6 +31,11 @@ builder.Services.AddMassTransit(x =>
         cfg.ReceiveEndpoint("building-remove-queue", e =>
         {
             e.ConfigureConsumer<BuildingRemovedEventConsumer>(context);
+        });
+        
+        cfg.ReceiveEndpoint("building-update-queue", e =>
+        {
+            e.ConfigureConsumer<BuildingUpdatedEventConsumer>(context);
         });
     });
 });
