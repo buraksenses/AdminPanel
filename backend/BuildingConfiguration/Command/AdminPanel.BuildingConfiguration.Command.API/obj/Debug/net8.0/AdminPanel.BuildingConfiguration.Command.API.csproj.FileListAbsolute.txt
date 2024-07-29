@@ -70,3 +70,11 @@ Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\Admi
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\RabbitMQ.Client.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\Common.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\Common.pdb
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

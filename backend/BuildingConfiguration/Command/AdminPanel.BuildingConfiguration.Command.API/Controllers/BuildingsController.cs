@@ -1,9 +1,7 @@
 ﻿using AdminPanel.BuildingConfiguration.Command.Application.Commands;
-using AdminPanel.Shared;
 using AdminPanel.Shared.ControllerBases;
-using CQRS.Core.Messages;
-using MassTransit;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdminPanel.BuildingConfiguration.Command.Controllers;
@@ -17,6 +15,7 @@ public class BuildingsController : CustomBaseController
         _mediator = mediator;
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public async Task<IActionResult> AddBuildingAsync(AddBuildingCommand command)
     {
@@ -25,6 +24,7 @@ public class BuildingsController : CustomBaseController
         return CreateActionResultInstance(response);
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> RemoveBuildingAsync(Guid id, RemoveBuildingCommand command)
     {
