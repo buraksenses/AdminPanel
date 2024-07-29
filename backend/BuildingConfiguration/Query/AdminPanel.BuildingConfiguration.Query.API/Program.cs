@@ -1,4 +1,5 @@
 using AdminPanel.BuildingConfiguration.Query.Application.Consumers;
+using AdminPanel.BuildingConfiguration.Query.Application.Handlers;
 using AdminPanel.BuildingConfiguration.Query.Domain.Repositories;
 using AdminPanel.BuildingConfiguration.Query.Persistence.DataAccess;
 using AdminPanel.BuildingConfiguration.Query.Persistence.Repositories;
@@ -46,7 +47,17 @@ builder.Services.AddDbContext<BuildingDbContext>(options =>
 
 builder.Services.AddScoped<IBuildingRepository, BuildingRepository>();
 
-//builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(BuildingRemovedNotificationHandler).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetAllBuildingsQueryHandler).Assembly));
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", builder =>
+    {
+        builder.WithOrigins("http://localhost:5173")
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
@@ -58,6 +69,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<GlobalExceptionHandler>();
+
+app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();
 

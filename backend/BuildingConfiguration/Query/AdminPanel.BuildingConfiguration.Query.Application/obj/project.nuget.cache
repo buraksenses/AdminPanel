@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ZWhjfwSAewAEt9A+53J2fAK0U2X3PQkHr2BVAnenoP6Zkp22YA81RfoxYDopqwORrjSt8AFogSQ8ojwU5pMXHA==",
+  "dgSpecHash": "Y1kmhYCRBhDtidY6eC8YcWzh9lNujQelithirPuCldJZIsn4DI8Elw1m2PUU4EuW8OUCVtJVaMm9BJnGhcSyYA==",
   "success": true,
   "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Query\\AdminPanel.BuildingConfiguration.Query.Application\\AdminPanel.BuildingConfiguration.Query.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Burak\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
