@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdminPanel.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+462f73d3a7d9fda3d87b7a007a3babb8ddab0843")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e43ed1590eaba92e87e4f735911b918f259588f")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdminPanel.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdminPanel.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

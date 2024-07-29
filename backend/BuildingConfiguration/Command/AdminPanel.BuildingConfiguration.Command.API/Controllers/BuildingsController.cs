@@ -1,4 +1,5 @@
 ﻿using AdminPanel.BuildingConfiguration.Command.Application.Commands;
+using AdminPanel.Shared;
 using AdminPanel.Shared.ControllerBases;
 using CQRS.Core.Messages;
 using MassTransit;
@@ -19,6 +20,7 @@ public class BuildingsController : CustomBaseController
     [HttpPost]
     public async Task<IActionResult> AddBuildingAsync(AddBuildingCommand command)
     {
+        //var jwtKey = Utils.GenerateSecureJwtKey();
         var response = await _mediator.Send(command);
         return CreateActionResultInstance(response);
     }
