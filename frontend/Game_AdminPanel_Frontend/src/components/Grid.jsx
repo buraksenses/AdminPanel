@@ -1,10 +1,13 @@
-function Grid({
-  configurations,
-  buildingTypes,
-  openUpdateModal,
-  handleRemoveConfiguration,
-}) {
-  
+import { useConfig } from "../Contexts/ConfigurationsContext";
+
+function Grid() {
+  const {
+    configurations,
+    buildingTypes,
+    openUpdateModal,
+    handleRemoveConfiguration,
+  } = useConfig();
+
   return (
     <div className="grid">
       {configurations.map((config, index) => (

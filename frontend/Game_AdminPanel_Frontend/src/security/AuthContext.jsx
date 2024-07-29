@@ -79,7 +79,7 @@ function AuthProvider({ children }) {
     setIsAuthenticated(false);
     setUsername(null);
     setJwtToken(null);
-    localStorage.removeItem("authToken"); // Logout olduğunda token'ı sil
+    localStorage.removeItem("authToken");
   }
 
   return (

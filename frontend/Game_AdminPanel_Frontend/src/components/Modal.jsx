@@ -1,21 +1,20 @@
-function Modal({
-  error,
-  buildingType,
-  availableBuildingTypes,
-  buildingCost,
-  setBuildingCost,
-  setBuildingType,
-  constructionTime,
-  setConstructionTime,
-  handleAddConfiguration,
-  setShowModal,
-  modalType,
-  handleUpdateConfiguration,
-}) {
+import { useConfig } from "../Contexts/ConfigurationsContext";
 
-  
-
-
+function Modal() {
+  const {
+    modalType,
+    error,
+    buildingType,
+    setBuildingType,
+    availableBuildingTypes,
+    buildingCost,
+    setBuildingCost,
+    constructionTime,
+    setConstructionTime,
+    handleAddConfiguration,
+    handleUpdateConfiguration,
+    setShowModal,
+  } = useConfig();
 
   return (
     <div className="modal">

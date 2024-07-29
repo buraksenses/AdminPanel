@@ -33,7 +33,7 @@ function Authentication() {
     if (isLogin) {
       success = await login(username, password);
       if (success) {
-        navigate("/dashboard"); // Başarılı girişte kullanıcıyı yönlendir
+        navigate("/dashboard");
       } else {
         alert("Login failed. Please check your username and password.");
       }
