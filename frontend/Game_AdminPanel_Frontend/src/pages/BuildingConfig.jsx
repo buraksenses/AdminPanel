@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../ConfigurationPage.css";
+import Modal from "../components/Modal";
+import Grid from "../components/Grid";
 
 const buildingTypes = [
   { type: "Farm", icon: "../../public/farm.png" },
@@ -49,65 +51,21 @@ const ConfigurationPage = () => {
         Add Configuration
       </button>
 
-      <div className="grid">
-        {configurations.map((config, index) => (
-          <div className="grid-item" key={index}>
-            <img
-              src={
-                buildingTypes.find((b) => b.type === config.buildingType).icon
-              }
-              alt={config.buildingType}
-            />
-            <div className="grid-item-details">
-              <h3>{config.buildingType}</h3>
-              <p>Cost: {config.buildingCost}</p>
-              <p>Time: {config.constructionTime}s</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <Grid configurations={configurations} buildingTypes={buildingTypes} />
 
       {showModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2>Add Building Configuration</h2>
-            {error && <div className="error">{error}</div>}
-            <div className="form-group">
-              <label>Building Type</label>
-              <select
-                value={buildingType}
-                onChange={(e) => setBuildingType(e.target.value)}
-              >
-                <option value="">Select...</option>
-                {availableBuildingTypes.map((type, index) => (
-                  <option key={index} value={type.type}>
-                    {type.type}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="form-group">
-              <label>Building Cost</label>
-              <input
-                type="number"
-                value={buildingCost}
-                onChange={(e) => setBuildingCost(e.target.value)}
-              />
-            </div>
-            <div className="form-group">
-              <label>Construction Time (seconds)</label>
-              <input
-                type="number"
-                value={constructionTime}
-                onChange={(e) => setConstructionTime(e.target.value)}
-              />
-            </div>
-            <div className="form-actions">
-              <button onClick={handleAddConfiguration}>OK</button>
-              <button onClick={() => setShowModal(false)}>Cancel</button>
-            </div>
-          </div>
-        </div>
+        <Modal
+          error={error}
+          buildingCost={buildingCost}
+          buildingType={buildingType}
+          availableBuildingTypes={availableBuildingTypes}
+          setBuildingCost={setBuildingCost}
+          setBuildingType={setBuildingType}
+          constructionTime={constructionTime}
+          setConstructionTime={setConstructionTime}
+          handleAddConfiguration={handleAddConfiguration}
+          setShowModal={setShowModal}
+        />
       )}
     </div>
   );
