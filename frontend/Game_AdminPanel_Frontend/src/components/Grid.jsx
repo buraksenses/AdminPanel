@@ -9,15 +9,10 @@ function Grid() {
     handleRemoveConfiguration,
   } = useConfig();
 
-  console.log("Configurations:", configurations);
-  console.log("BuildingTypes:", buildingTypes);
-
   return (
       <div className="grid">
         {configurations.map((config, index) => {
           const buildingTypeObj = buildingTypes.find((b) => b.type === config.buildingType);
-          console.log("Config:", config);
-          console.log("BuildingTypeObj:", buildingTypeObj);
 
           if (!buildingTypeObj) {
             console.error(`Building type ${config.buildingType} not found in buildingTypes array.`);

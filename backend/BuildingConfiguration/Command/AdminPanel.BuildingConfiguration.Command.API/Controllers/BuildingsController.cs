@@ -25,9 +25,12 @@ public class BuildingsController : CustomBaseController
 
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> RemoveBuildingAsync(Guid id, RemoveBuildingCommand command)
+    public async Task<IActionResult> RemoveBuildingAsync(Guid id)
     {
-        command.BuildingId = id;
+        var command = new RemoveBuildingCommand
+        {
+            BuildingId = id
+        };
         var response = await _mediator.Send(command);
         return CreateActionResultInstance(response);
     }

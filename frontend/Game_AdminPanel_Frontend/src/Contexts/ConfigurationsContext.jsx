@@ -127,7 +127,7 @@ function ConfigurationsProvider({ children }) {
       }
     } catch (error) {
       setError("Failed to update configuration. Please try again.");
-      alert("There was an error updating the configuration:", error);
+      alert(`There was an error updating the configuration: ${error.message}`);
     }
   };
 
@@ -137,14 +137,14 @@ function ConfigurationsProvider({ children }) {
     );
 
     try {
-      const response = await axios.delete(`${WRITE_BASE_URL}/api/buildings`);
+      const response = await axios.delete(`${WRITE_BASE_URL}/api/buildings/${configToRemove.id}`);
 
-      if (response.data.StatusCode === 200) {
+      if (response.data.statusCode === 200) {
         setConfigurations(updatedConfigurations);
       }
     } catch (error) {
       setError("Failed to remove configuration. Please try again.");
-      alert("There was an error removing the configuration:", error);
+      alert(`There was an error removing the configuration: ${error.message}`);
     }
   };
 
