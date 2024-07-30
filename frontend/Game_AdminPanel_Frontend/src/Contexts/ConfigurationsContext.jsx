@@ -174,6 +174,7 @@ function ConfigurationsProvider({ children }) {
         constructionTime,
         selectedConfig,
         error,
+        isLoading,
         handleAddConfiguration,
         handleUpdateConfiguration,
         handleRemoveConfiguration,
