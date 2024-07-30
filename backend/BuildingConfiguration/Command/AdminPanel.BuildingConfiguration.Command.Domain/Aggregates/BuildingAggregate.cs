@@ -1,6 +1,6 @@
-﻿using AdminPanel.BuildingConfiguration.Command.Domain.Enums;
-using Common.Events;
+﻿using Common.Events;
 using CQRS.Core.Domain;
+using CQRS.Core.Domain.Enums;
 
 namespace AdminPanel.BuildingConfiguration.Command.Domain.Aggregates;
 

@@ -1,4 +1,4 @@
-﻿using AdminPanel.BuildingConfiguration.Command.Domain.Enums;
+﻿using CQRS.Core.Domain.Enums;
 using CQRS.Core.Events;
 
 namespace Common.Events;

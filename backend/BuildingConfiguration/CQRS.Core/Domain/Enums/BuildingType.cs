@@ -1,4 +1,4 @@
-﻿namespace AdminPanel.BuildingConfiguration.Command.Domain.Enums;
+﻿namespace CQRS.Core.Domain.Enums;
 
 public enum BuildingType
 {

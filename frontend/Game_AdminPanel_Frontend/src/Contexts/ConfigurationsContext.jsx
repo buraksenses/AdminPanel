@@ -5,16 +5,17 @@ import barracksIcon from "../../public/barracks.png";
 import academyIcon from "../../public/academy.png";
 import headquartersIcon from "../../public/headquarters.png";
 import axios from "axios";
+import {BuildingType, BuildingTypeStringToInt} from "../enums/Enums.js";
 
 const READ_BASE_URL = "http://localhost:5129";
 const WRITE_BASE_URL = "http://localhost:5228";
 
 const buildingTypes = [
-  { type: "Farm", icon: farmIcon },
-  { type: "Academy", icon: academyIcon },
-  { type: "Headquarters", icon: headquartersIcon },
-  { type: "LumberMill", icon: lumbermillIcon },
-  { type: "Barracks", icon: barracksIcon },
+  { type: BuildingType.Farm, icon: farmIcon },
+  { type: BuildingType.Academy, icon: academyIcon },
+  { type: BuildingType.Headquarters, icon: headquartersIcon },
+  { type: BuildingType.LumberMill, icon: lumbermillIcon },
+  { type: BuildingType.Barracks, icon: barracksIcon },
 ];
 
 const ConfigurationsContext = createContext();
@@ -37,7 +38,13 @@ function ConfigurationsProvider({ children }) {
         const res = await fetch(`${READ_BASE_URL}/api/buildings`);
         const data = await res.json();
         console.log(data);
-        setConfigurations(data.data);
+
+        const updatedConfigurations = data.data.map(config => ({
+          ...config,
+          buildingType: BuildingTypeStringToInt[config.buildingType] || config.buildingType,
+        }));
+
+        setConfigurations(updatedConfigurations);
       } catch (error) {
         alert(error.response.data.errors);
       } finally {
@@ -49,24 +56,26 @@ function ConfigurationsProvider({ children }) {
 
   const handleAddConfiguration = async () => {
     if (
-      !buildingType ||
-      buildingCost <= 0 ||
-      constructionTime < 30 ||
-      constructionTime > 1800
+        !buildingType ||
+        !Object.values(BuildingType).includes(parseInt(buildingType)) ||
+        buildingCost <= 0 ||
+        constructionTime < 30 ||
+        constructionTime > 1800
     ) {
       setError("Invalid input. Please check the values.");
       return;
     }
 
-    const newConfiguration = { buildingType, buildingCost, constructionTime };
+    const newConfiguration = { buildingType: parseInt(buildingType), buildingCost, constructionTime };
+
 
     try {
       const response = await axios.post(
-        `${WRITE_BASE_URL}/api/buildings`,
-        newConfiguration
+          `${WRITE_BASE_URL}/api/buildings`,
+          newConfiguration
       );
 
-      if (response.data.statusCode === 200) {
+      if (response.data.statusCode === 201) {
         setConfigurations([...configurations, newConfiguration]);
         setShowModal(false);
         setBuildingType("");
@@ -77,8 +86,8 @@ function ConfigurationsProvider({ children }) {
         setError("Failed to add configuration. Please try again.");
       }
     } catch (error) {
-      setError("Failed to add configuration. Please try again.");
-      alert("There was an error adding the configuration:", error);
+      setError(error.message);
+      alert(error.message);
     }
   };
 
@@ -164,7 +173,6 @@ function ConfigurationsProvider({ children }) {
         constructionTime,
         selectedConfig,
         error,
-        availableBuildingTypes,
         handleAddConfiguration,
         handleUpdateConfiguration,
         handleRemoveConfiguration,

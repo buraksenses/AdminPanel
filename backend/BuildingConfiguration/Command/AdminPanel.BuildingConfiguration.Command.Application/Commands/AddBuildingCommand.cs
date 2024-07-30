@@ -1,6 +1,6 @@
 ﻿using AdminPanel.BuildingConfiguration.Command.Application.DTOs;
-using AdminPanel.BuildingConfiguration.Command.Domain.Enums;
 using AdminPanel.Shared.DTOs;
+using CQRS.Core.Domain.Enums;
 using MediatR;
 
 namespace AdminPanel.BuildingConfiguration.Command.Application.Commands;

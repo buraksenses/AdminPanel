@@ -1,5 +1,5 @@
-﻿using AdminPanel.BuildingConfiguration.Command.Domain.Enums;
-using AdminPanel.BuildingConfiguration.Query.Domain.Entities;
+﻿using AdminPanel.BuildingConfiguration.Query.Domain.Entities;
+using CQRS.Core.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace AdminPanel.BuildingConfiguration.Query.Persistence.Extensions;

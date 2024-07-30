@@ -1,4 +1,4 @@
-﻿using AdminPanel.BuildingConfiguration.Command.Domain.Enums;
+﻿using CQRS.Core.Domain.Enums;
 
 namespace AdminPanel.BuildingConfiguration.Query.Domain.Entities;
 

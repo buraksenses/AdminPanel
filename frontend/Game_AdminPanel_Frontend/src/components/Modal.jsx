@@ -1,4 +1,5 @@
 import { useConfig } from "../Contexts/ConfigurationsContext";
+import {BuildingType, BuildingTypeLabels} from "../enums/Enums.js";
 
 function Modal() {
   const {
@@ -6,7 +7,6 @@ function Modal() {
     error,
     buildingType,
     setBuildingType,
-    availableBuildingTypes,
     buildingCost,
     setBuildingCost,
     constructionTime,
@@ -17,56 +17,53 @@ function Modal() {
   } = useConfig();
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <h2>
-          {modalType === "add"
-            ? "Add Building Configuration"
-            : "Update Building Configuration"}
-        </h2>
-        {error && <div className="error">{error}</div>}
-        {modalType === "add" && (
-          <div className="form-group">
-            <label>Building Type</label>
-            <select
-              value={buildingType}
-              onChange={(e) => setBuildingType(e.target.value)}
-            >
-              <option value="">Select...</option>
-              {availableBuildingTypes.map((type, index) => (
-                <option key={index} value={type.type}>
-                  {type.type}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
-        <div className="form-group">
-          <label>Building Cost</label>
-          <input
-            type="number"
-            value={buildingCost}
-            onChange={(e) => setBuildingCost(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Construction Time (seconds)</label>
-          <input
-            type="number"
-            value={constructionTime}
-            onChange={(e) => setConstructionTime(e.target.value)}
-          />
-        </div>
-        <div className="form-actions">
-          {modalType === "add" ? (
-            <button onClick={handleAddConfiguration}>OK</button>
-          ) : (
-            <button onClick={handleUpdateConfiguration}>Update</button>
+      <div className="modal">
+        <div className="modal-content">
+          <h2>
+            {modalType === "add"
+                ? "Add Building Configuration"
+                : "Update Building Configuration"}
+          </h2>
+          {error && <div className="error">{error}</div>}
+          {modalType === "add" && (
+              <div className="form-group">
+                <label>Building Type</label>
+                <select value={buildingType} onChange={(e) => setBuildingType(parseInt(e.target.value))}>
+                  <option value="">Select...</option>
+                  {Object.entries(BuildingTypeLabels).map(([key, label]) => (
+                      <option key={key} value={key}>
+                        {label}
+                      </option>
+                  ))}
+                </select>
+              </div>
           )}
-          <button onClick={() => setShowModal(false)}>Cancel</button>
+          <div className="form-group">
+            <label>Building Cost</label>
+            <input
+                type="number"
+                value={buildingCost}
+                onChange={(e) => setBuildingCost(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Construction Time (seconds)</label>
+            <input
+                type="number"
+                value={constructionTime}
+                onChange={(e) => setConstructionTime(e.target.value)}
+            />
+          </div>
+          <div className="form-actions">
+            {modalType === "add" ? (
+                <button onClick={handleAddConfiguration}>OK</button>
+            ) : (
+                <button onClick={handleUpdateConfiguration}>Update</button>
+            )}
+            <button onClick={() => setShowModal(false)}>Cancel</button>
+          </div>
         </div>
       </div>
-    </div>
   );
 }
 
