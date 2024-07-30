@@ -66,7 +66,7 @@ function ConfigurationsProvider({ children }) {
         newConfiguration
       );
 
-      if (response.data.StatusCode === 200) {
+      if (response.data.statusCode === 200) {
         setConfigurations([...configurations, newConfiguration]);
         setShowModal(false);
         setBuildingType("");
