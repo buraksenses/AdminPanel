@@ -15,7 +15,7 @@ public class BuildingsController : CustomBaseController
         _mediator = mediator;
     }
 
-
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public async Task<IActionResult> AddBuildingAsync(AddBuildingCommand command)
     {

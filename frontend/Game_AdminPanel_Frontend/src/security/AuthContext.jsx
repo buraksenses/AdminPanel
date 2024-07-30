@@ -8,40 +8,31 @@ const useAuth = () => useContext(AuthContext);
 function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState(null);
-  const [jwtToken, setJwtToken] = useState(null);
 
   async function login(username, password) {
     try {
       const response = await axios.post(
-        "http://localhost:5218/api/Auth/login",
-        {
-          username,
-          password,
-        }
+          "http://localhost:5218/api/Auth/login",
+          {
+            username,
+            password,
+          }
       );
-
-      console.log(response.data);
-
+      alert(response.data.data.jwtToken.toString())
       if (response.data !== null) {
-        setIsAuthenticated(true);
         setUsername(username);
-        setJwtToken(response.data.data.jwtToken); // Token'ı state'e kaydet
 
-        // Token'ı localStorage'a kaydet
-        localStorage.setItem("authToken", jwtToken);
-
+        localStorage.setItem("jwtToken", response.data.data.jwtToken);
+        window.location.href = "/dashboard";
         return true;
       } else {
-        setIsAuthenticated(false);
         setUsername(null);
-        setJwtToken(null); // Başarısız olduğunda token'ı sıfırla
+        alert("Login failed. Please try again.");
         return false;
       }
     } catch (error) {
-      console.error("Login failed", error);
-      setIsAuthenticated(false);
+      alert("Login failed. Please try again.");
       setUsername(null);
-      setJwtToken(null); // Hata durumunda token'ı sıfırla
       return false;
     }
   }

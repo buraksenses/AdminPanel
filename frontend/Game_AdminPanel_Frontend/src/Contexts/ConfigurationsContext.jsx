@@ -4,8 +4,8 @@ import lumbermillIcon from "../../public/lumbermill.png";
 import barracksIcon from "../../public/barracks.png";
 import academyIcon from "../../public/academy.png";
 import headquartersIcon from "../../public/headquarters.png";
-import axios from "axios";
 import {BuildingType, BuildingTypeStringToInt} from "../enums/Enums.js";
+import apiClient from "../api/GameApiService.jsx";
 
 const READ_BASE_URL = "http://localhost:5129";
 const WRITE_BASE_URL = "http://localhost:5228";
@@ -70,7 +70,7 @@ function ConfigurationsProvider({ children }) {
 
 
     try {
-      const response = await axios.post(
+      const response = await apiClient.post(
           `${WRITE_BASE_URL}/api/buildings`,
           newConfiguration
       );
@@ -109,7 +109,7 @@ function ConfigurationsProvider({ children }) {
     );
 
     try {
-      const response = await axios.put(`${WRITE_BASE_URL}/api/buildings`, {
+      const response = await apiClient.put(`${WRITE_BASE_URL}/api/buildings`, {
         id: selectedConfig.id,
         buildingCost,
         constructionTime,
@@ -137,7 +137,7 @@ function ConfigurationsProvider({ children }) {
     );
 
     try {
-      const response = await axios.delete(`${WRITE_BASE_URL}/api/buildings/${configToRemove.id}`);
+      const response = await apiClient.delete(`${WRITE_BASE_URL}/api/buildings/${configToRemove.id}`);
 
       if (response.data.statusCode === 200) {
         setConfigurations(updatedConfigurations);
