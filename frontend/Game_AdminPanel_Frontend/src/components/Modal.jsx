@@ -1,5 +1,5 @@
 import { useConfig } from "../Contexts/ConfigurationsContext";
-import {BuildingType, BuildingTypeLabels} from "../enums/Enums.js";
+import {BuildingTypeLabels} from "../enums/Enums.js";
 
 function Modal() {
   const {
@@ -14,6 +14,7 @@ function Modal() {
     handleAddConfiguration,
     handleUpdateConfiguration,
     setShowModal,
+    availableBuildingTypes
   } = useConfig();
 
   return (
@@ -30,9 +31,9 @@ function Modal() {
                 <label>Building Type</label>
                 <select value={buildingType} onChange={(e) => setBuildingType(parseInt(e.target.value))}>
                   <option value="">Select...</option>
-                  {Object.entries(BuildingTypeLabels).map(([key, label]) => (
-                      <option key={key} value={key}>
-                        {label}
+                  {availableBuildingTypes.map((type) => (
+                      <option key={type.type} value={type.type}>
+                        {BuildingTypeLabels[type.type]}
                       </option>
                   ))}
                 </select>

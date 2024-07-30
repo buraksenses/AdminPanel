@@ -13,7 +13,7 @@ const WRITE_BASE_URL = "http://localhost:5228";
 const buildingTypes = [
   { type: BuildingType.Farm, icon: farmIcon },
   { type: BuildingType.Academy, icon: academyIcon },
-  { type: BuildingType.Headquarters, icon: headquartersIcon },
+  { type: BuildingType.HeadQuarters, icon: headquartersIcon },
   { type: BuildingType.LumberMill, icon: lumbermillIcon },
   { type: BuildingType.Barracks, icon: barracksIcon },
 ];
@@ -169,6 +169,7 @@ function ConfigurationsProvider({ children }) {
         modalType,
         buildingType,
         buildingTypes,
+        availableBuildingTypes,
         buildingCost,
         constructionTime,
         selectedConfig,
