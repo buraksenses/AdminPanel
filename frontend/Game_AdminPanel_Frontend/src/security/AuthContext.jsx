@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
+import {setToken} from "../utils/auth.jsx";
 
 const AuthContext = createContext();
 
@@ -18,12 +19,10 @@ function AuthProvider({ children }) {
             password,
           }
       );
-      alert(response.data.data.jwtToken.toString())
+
       if (response.data !== null) {
         setUsername(username);
-
-        localStorage.setItem("jwtToken", response.data.data.jwtToken);
-        window.location.href = "/dashboard";
+        setToken(response.data.data.jwtToken);
         return true;
       } else {
         setUsername(null);
@@ -53,7 +52,6 @@ function AuthProvider({ children }) {
       if (response.data.data === null) {
         setIsAuthenticated(false);
         setUsername(null);
-        setJwtToken(null);
         return false;
       }
     } catch (error) {
@@ -61,7 +59,6 @@ function AuthProvider({ children }) {
       alert(error.response.data.errors);
       setIsAuthenticated(false);
       setUsername(null);
-      setJwtToken(null);
       return false;
     }
   }
@@ -69,7 +66,6 @@ function AuthProvider({ children }) {
   function logout() {
     setIsAuthenticated(false);
     setUsername(null);
-    setJwtToken(null);
     localStorage.removeItem("authToken");
   }
 

@@ -1,4 +1,5 @@
 import axios from "axios";
+import {getToken, isTokenExpired, removeToken} from "../utils/auth.jsx";
 
 const apiClient = axios.create({
   baseURL: "http://localhost:5218",
@@ -6,14 +7,19 @@ const apiClient = axios.create({
 
 apiClient.interceptors.request.use(
     (config) => {
-      const token = localStorage.getItem('jwtToken');
-      if (token) {
-        config.headers['Authorization'] = `Bearer ${token}`;
-      }
-      return config;
+        const token = getToken();
+        if (token) {
+            if (isTokenExpired(token)) {
+                window.dispatchEvent(new CustomEvent('token-expired'));
+                removeToken();
+            } else {
+                config.headers['Authorization'] = `Bearer ${token}`;
+            }
+        }
+        return config;
     },
     (error) => {
-      return Promise.reject(error);
+        return Promise.reject(error);
     }
 );
 
