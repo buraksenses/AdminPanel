@@ -2,9 +2,9 @@
 
 public enum BuildingType
 {
-    Farm,
-    Academy,
-    HeadQuarters,
-    LumberMill,
-    Barracks
+    Farm = 1,
+    Academy = 2,
+    HeadQuarters = 3,
+    LumberMill = 4,
+    Barracks = 5
 }
