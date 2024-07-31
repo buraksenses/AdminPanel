@@ -176,7 +176,7 @@ function ConfigurationsProvider({ children }) {
       !configurations.find((config) => config.buildingType === type.type)
   );
 
-  const logout = () => {
+  const reset = () => {
     setShowModal(false);
     setModalType('');
     setBuildingCost('');
@@ -201,7 +201,7 @@ function ConfigurationsProvider({ children }) {
         handleUpdateConfiguration,
         handleRemoveConfiguration,
         openUpdateModal,
-        logout,
+        logout: reset,
         setModalType,
         setShowModal,
         setBuildingCost,

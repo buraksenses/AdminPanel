@@ -1,13 +1,13 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
-import {setToken} from "../utils/auth.jsx";
+import {getToken, setToken} from "../utils/auth.jsx";
 
 const AuthContext = createContext();
 
 const useAuth = () => useContext(AuthContext);
 
 function AuthProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(!!getToken());
   const [username, setUsername] = useState(null);
 
   async function login(username, password) {
@@ -47,7 +47,7 @@ function AuthProvider({ children }) {
         }
       );
 
-      console.log(response.data); // Yanıtın yapısını kontrol edin
+      console.log(response.data);
 
       if (response.data.data === null) {
         setIsAuthenticated(false);
@@ -66,12 +66,12 @@ function AuthProvider({ children }) {
   function logout() {
     setIsAuthenticated(false);
     setUsername(null);
-    localStorage.removeItem("authToken");
+    localStorage.removeItem("jwtToken");
   }
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, login, register, logout, username }}
+      value={{ isAuthenticated, login, register, logout, username, setIsAuthenticated }}
     >
       {children}
     </AuthContext.Provider>

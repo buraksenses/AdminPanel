@@ -7,6 +7,7 @@ import LogoutModal from './components/LogoutModal';
 import { AuthProvider } from "./security/AuthContext";
 import { ConfigurationsProvider } from "./Contexts/ConfigurationsContext";
 import { NavigateProvider } from './Contexts/NavigateContext.jsx';
+import PublicRoute from "./components/PublicRoute.jsx";
 
 function App() {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
@@ -31,8 +32,7 @@ function App() {
               <NavigateProvider>
                 <LogoutModal show={showLogoutModal} onClose={() => setShowLogoutModal(false)} />
                 <Routes>
-                  <Route path="/" element={<Authentication />} />
-                  <Route path="/auth" element={<Authentication />} />
+                  <Route path="/auth" element={<PublicRoute element={Authentication} />} />
                   <Route path="/dashboard" element={<PrivateRoute element={<BuildingConfig />} />} />
                 </Routes>
               </NavigateProvider>

@@ -6,7 +6,7 @@ import LoginForm from "../components/LoginForm";
 import Spinner from "../components/Spinner";
 
 function Authentication() {
-  const { login, register } = useAuth();
+  const { login, register, setIsAuthenticated } = useAuth();
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState("");
@@ -34,6 +34,7 @@ function Authentication() {
     const success = await login(username, password);
     setIsLoading(false);
     if (success) {
+      setIsAuthenticated(true);
       navigate("/dashboard");
     } else {
       alert("Login failed. Please check your username and password.");
