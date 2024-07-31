@@ -1,11 +1,12 @@
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Authentication from "./pages/Authentication";
 import BuildingConfig from "./pages/BuildingConfig";
+import PrivateRoute from './components/PrivateRoute';
+import LogoutModal from './components/LogoutModal';
 import { AuthProvider } from "./security/AuthContext";
 import { ConfigurationsProvider } from "./Contexts/ConfigurationsContext";
-import PrivateRoute from "./components/PrivateRoute.jsx";
-import {useEffect, useState} from "react";
-import LogoutModal from "./components/LogoutModal.jsx";
+import { NavigateProvider } from './Contexts/NavigateContext.jsx';
 
 function App() {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
@@ -22,27 +23,23 @@ function App() {
     };
   }, []);
 
-  const handleLogout = () => {
-    setShowLogoutModal(false);
-    localStorage.removeItem('jwtToken');
-    window.location.href = "/auth";
-  };
-
   return (
-    <div>
-      <AuthProvider>
-        <ConfigurationsProvider>
-          <BrowserRouter>
-            <LogoutModal show={showLogoutModal} onClose={handleLogout} />
-            <Routes>
-              <Route path="/" element={<Authentication />} />
-              <Route path="/auth" element={<Authentication />} />
-              <Route path="/dashboard" element={<PrivateRoute element={<BuildingConfig />} />} />
-            </Routes>
-          </BrowserRouter>
-        </ConfigurationsProvider>
-      </AuthProvider>
-    </div>
+      <div>
+        <AuthProvider>
+          <ConfigurationsProvider>
+            <BrowserRouter>
+              <NavigateProvider>
+                <LogoutModal show={showLogoutModal} onClose={() => setShowLogoutModal(false)} />
+                <Routes>
+                  <Route path="/" element={<Authentication />} />
+                  <Route path="/auth" element={<Authentication />} />
+                  <Route path="/dashboard" element={<PrivateRoute element={<BuildingConfig />} />} />
+                </Routes>
+              </NavigateProvider>
+            </BrowserRouter>
+          </ConfigurationsProvider>
+        </AuthProvider>
+      </div>
   );
 }
 

@@ -1,5 +1,18 @@
-import "../LogoutModal.css";
+import '../LogoutModal.css';
+import { useNavigateContext } from '../Contexts/NavigateContext.jsx';
+import {useConfig} from "../Contexts/ConfigurationsContext.jsx";
+
 const LogoutModal = ({ show, onClose }) => {
+    const navigate = useNavigateContext();
+    const { logout } = useConfig();
+
+    const handleLogout = () => {
+        localStorage.removeItem('jwtToken');
+        onClose();
+        logout();
+        navigate("/auth");
+    };
+
     if (!show) {
         return null;
     }
@@ -9,7 +22,7 @@ const LogoutModal = ({ show, onClose }) => {
             <div className="logout-modal">
                 <h2>Session Expired</h2>
                 <p>Your session has expired. You will be redirected to the login page.</p>
-                <button onClick={onClose}>OK</button>
+                <button onClick={handleLogout}>OK</button>
             </div>
         </div>
     );

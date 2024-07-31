@@ -86,6 +86,11 @@ function ConfigurationsProvider({ children }) {
         setError("Failed to add configuration. Please try again.");
       }
     } catch (error) {
+      console.log(error.message);
+      if (error.message === 'Session expired') {
+        // İşlem iptal edildi
+        return;
+      }
       setError(error.message);
       alert(error.message);
     }
@@ -126,6 +131,11 @@ function ConfigurationsProvider({ children }) {
         setError("");
       }
     } catch (error) {
+      console.log(error.message)
+      if (error.message === 'Session expired') {
+        // İşlem iptal edildi
+        return;
+      }
       setError("Failed to update configuration. Please try again.");
       alert(`There was an error updating the configuration: ${error.message}`);
     }
@@ -143,6 +153,11 @@ function ConfigurationsProvider({ children }) {
         setConfigurations(updatedConfigurations);
       }
     } catch (error) {
+      console.log(error.message)
+      if (error.message === 'Session expired') {
+        // İşlem iptal edildi
+        return;
+      }
       setError("Failed to remove configuration. Please try again.");
       alert(`There was an error removing the configuration: ${error.message}`);
     }
@@ -160,6 +175,13 @@ function ConfigurationsProvider({ children }) {
     (type) =>
       !configurations.find((config) => config.buildingType === type.type)
   );
+
+  const logout = () => {
+    setShowModal(false);
+    setModalType('');
+    setBuildingCost('');
+    setConstructionTime('');
+  }
 
   return (
     <ConfigurationsContext.Provider
@@ -179,6 +201,7 @@ function ConfigurationsProvider({ children }) {
         handleUpdateConfiguration,
         handleRemoveConfiguration,
         openUpdateModal,
+        logout,
         setModalType,
         setShowModal,
         setBuildingCost,
