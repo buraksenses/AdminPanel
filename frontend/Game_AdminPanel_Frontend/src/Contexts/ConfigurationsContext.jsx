@@ -6,7 +6,8 @@ import academyIcon from "../../public/academy.png";
 import headquartersIcon from "../../public/headquarters.png";
 import {BuildingType, BuildingTypeLabels, BuildingTypeStringToInt} from "../enums/Enums.js";
 import apiClient from "../api/GameApiService.jsx";
-import {showInfoToast, showSuccessToast} from "../utils/notifications.js";
+import {showInfoToast, showSuccessToast, showWarningToast} from "../utils/notifications.js";
+import {useAuth} from "../security/AuthContext.jsx";
 
 const READ_BASE_URL = "http://localhost:5129";
 const WRITE_BASE_URL = "http://localhost:5228";
@@ -31,6 +32,7 @@ function ConfigurationsProvider({ children }) {
   const [selectedConfig, setSelectedConfig] = useState(null);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const {isAuthenticated, setIsAuthenticated} = useAuth();
 
   useEffect(function () {
     async function fetchConfigurations() {
@@ -89,10 +91,10 @@ function ConfigurationsProvider({ children }) {
       }
     } catch (error) {
       console.log(error.message);
-      if (error.message === 'Session expired') {
-        // İşlem iptal edildi
+
+      if (checkSessionExpired(error))
         return;
-      }
+
       setError(error.message);
       alert(error.message);
     }
@@ -135,10 +137,10 @@ function ConfigurationsProvider({ children }) {
       }
     } catch (error) {
       console.log(error.message)
-      if (error.message === 'Session expired') {
-        // İşlem iptal edildi
+
+      if (checkSessionExpired(error))
         return;
-      }
+
       setError("Failed to update configuration. Please try again.");
       alert(`There was an error updating the configuration: ${error.message}`);
     }
@@ -158,10 +160,10 @@ function ConfigurationsProvider({ children }) {
       }
     } catch (error) {
       console.log(error.message)
-      if (error.message === 'Session expired') {
-        // İşlem iptal edildi
+
+      if (checkSessionExpired(error))
         return;
-      }
+
       setError("Failed to remove configuration. Please try again.");
       alert(`There was an error removing the configuration: ${error.message}`);
     }
@@ -187,6 +189,15 @@ function ConfigurationsProvider({ children }) {
     setConstructionTime('');
   }
 
+  const checkSessionExpired = (error) => {
+    if (error.message === 'Session expired') {
+      showWarningToast("Your session has expired!")
+      setIsAuthenticated(false);
+      return true;
+    }
+    return false;
+  }
+
   return (
     <ConfigurationsContext.Provider
       value={{
@@ -205,7 +216,7 @@ function ConfigurationsProvider({ children }) {
         handleUpdateConfiguration,
         handleRemoveConfiguration,
         openUpdateModal,
-        logout: reset,
+        reset,
         setModalType,
         setShowModal,
         setBuildingCost,

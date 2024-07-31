@@ -1,13 +1,14 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
-import {getToken, setToken} from "../utils/auth.jsx";
+import {getToken, isTokenExpired, setToken} from "../utils/auth.jsx";
 
 const AuthContext = createContext();
 
 const useAuth = () => useContext(AuthContext);
 
 function AuthProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(!!getToken());
+  const token = getToken();
+  const [isAuthenticated, setIsAuthenticated] = useState(token && !isTokenExpired(token));
   const [username, setUsername] = useState(null);
 
   async function login(username, password) {

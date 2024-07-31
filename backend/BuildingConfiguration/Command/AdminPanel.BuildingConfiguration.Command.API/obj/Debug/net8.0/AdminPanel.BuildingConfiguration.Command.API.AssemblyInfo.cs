@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdminPanel.BuildingConfiguration.Command.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cf9ded6389b83ccdd0e12963d3ac8f548c9dc55")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+608e90a4cd2da778368eba9c5334ec860ff96cbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdminPanel.BuildingConfiguration.Command.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdminPanel.BuildingConfiguration.Command.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

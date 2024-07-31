@@ -37,7 +37,7 @@ function Authentication() {
     if (success) {
       setIsAuthenticated(true);
       showSuccessToast(`Logged in successfully! Welcome ${username}`)
-      navigate("/dashboard");
+      navigate("/dashboard", {replace: true});
     } else {
       alert("Login failed. Please check your username and password.");
     }
@@ -53,7 +53,7 @@ function Authentication() {
     const success = await register(username, password);
     setIsLoading(false);
     if (success) {
-      navigate("/auth");
+      navigate("/auth", {replace: true});
     } else {
       alert("Registration failed. Please try again.");
     }

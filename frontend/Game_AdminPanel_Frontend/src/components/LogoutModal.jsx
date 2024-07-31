@@ -4,18 +4,18 @@ import {useConfig} from "../Contexts/ConfigurationsContext.jsx";
 
 const LogoutModal = ({ show, onClose }) => {
     const navigate = useNavigateContext();
-    const { logout } = useConfig();
-
-    const handleLogout = () => {
-        localStorage.removeItem('jwtToken');
-        onClose();
-        logout();
-        navigate("/auth");
-    };
+    const { reset } = useConfig();
 
     if (!show) {
         return null;
     }
+
+    const handleLogout = () => {
+        localStorage.removeItem('jwtToken');
+        onClose();
+        reset();
+        navigate("/auth", { replace: true });
+    };
 
     return (
         <div className="logout-modal-overlay">
