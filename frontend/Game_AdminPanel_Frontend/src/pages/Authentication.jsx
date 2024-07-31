@@ -2,7 +2,6 @@ import { useState } from "react";
 import "../App.css";
 import { useAuth } from "../security/AuthContext";
 import { useNavigate } from "react-router-dom";
-import LoginForm from "../components/LoginForm";
 import Spinner from "../components/Spinner.jsx";
 
 function Authentication() {
@@ -17,13 +16,13 @@ function Authentication() {
 
   const validateRegistration = () => {
     if (username.length < 5) {
-      alert("username must be at least 5 characters long!");
+      alert("Username must be at least 5 characters long!");
       return false;
     } else if (confirmPassword !== password) {
-      alert("passwords do not match!");
+      alert("Passwords do not match!");
       return false;
     } else if (password.length < 8) {
-      alert("password must be at least 8 characters long!");
+      alert("Password must be at least 8 characters long!");
       return false;
     }
     return true;
@@ -47,7 +46,7 @@ function Authentication() {
       return;
     }
     setIsLoading(true);
-    const success = await register(username, password);
+    const success = await register(username, email, password);
     setIsLoading(false);
     if (success) {
       navigate("/auth");
@@ -67,7 +66,7 @@ function Authentication() {
 
   return (
       <div className="auth-container">
-        {isLoading && <Spinner/>}
+        {isLoading && <Spinner />}
         <div className={`auth-box ${isLoading ? 'loading' : ''}`}>
           <div className="toggle-switch">
           <span
@@ -83,14 +82,51 @@ function Authentication() {
             Register
           </span>
           </div>
-          <LoginForm
-              handleSubmit={handleSubmit}
-              setConfirmPassword={setConfirmPassword}
-              isLogin={isLogin}
-              setEmail={setEmail}
-              setUsername={setUsername}
-              setPassword={setPassword}
-          />
+          <form className="auth-form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>Username</label>
+              <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+              />
+            </div>
+            {!isLogin && (
+                <div className="form-group">
+                  <label>Email</label>
+                  <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                  />
+                </div>
+            )}
+            <div className="form-group">
+              <label>Password</label>
+              <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+              />
+            </div>
+            {!isLogin && (
+                <div className="form-group">
+                  <label>Confirm Password</label>
+                  <input
+                      type="password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      required
+                  />
+                </div>
+            )}
+            <div className="form-actions">
+              <button type="submit">{isLogin ? "Login" : "Register"}</button>
+            </div>
+          </form>
         </div>
       </div>
   );

@@ -19,7 +19,6 @@ public class TokenRepository : ITokenRepository
     
     public string CreateJwtToken(User user, List<string> roles)
     {
-        //Create claims
         var claims = new List<Claim>();
 
         claims.Add(new Claim(ClaimTypes.Email,user.Email));

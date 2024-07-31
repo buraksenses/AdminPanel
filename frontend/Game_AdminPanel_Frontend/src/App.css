@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +9,7 @@
 body,
 html {
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: 'MedievalSharp', Arial, sans-serif;
 }
 
 .auth-container {
@@ -19,14 +21,14 @@ html {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  background-color: #f0f0f0;
 }
 
 .auth-box {
-  background-color: rgba(193, 224, 204, 0.5);
+  background-color: rgba(193, 224, 204, 0.9);
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #8b4513;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,7 +53,7 @@ html {
 }
 
 .toggle-button.active {
-  background-color: #007bff;
+  background-color: #8b4513;
   color: #fff;
 }
 
@@ -65,18 +67,22 @@ html {
   margin-bottom: 10px;
   padding: 10px;
   width: 250px;
-  border: 1px solid #ccc;
+  border: 1px solid #8b4513;
   border-radius: 5px;
 }
 
 .auth-form button {
   padding: 10px 20px;
   border: none;
-  background-color: #007bff;
+  background-color: #8b4513;
   color: #fff;
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
+}
+
+.auth-form button:hover {
+  background-color: #a0522d;
 }
 
 .auth-box.loading {
@@ -110,4 +116,3 @@ html {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
