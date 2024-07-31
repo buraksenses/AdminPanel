@@ -4,8 +4,9 @@ import lumbermillIcon from "../../public/lumbermill.png";
 import barracksIcon from "../../public/barracks.png";
 import academyIcon from "../../public/academy.png";
 import headquartersIcon from "../../public/headquarters.png";
-import {BuildingType, BuildingTypeStringToInt} from "../enums/Enums.js";
+import {BuildingType, BuildingTypeLabels, BuildingTypeStringToInt} from "../enums/Enums.js";
 import apiClient from "../api/GameApiService.jsx";
+import {showInfoToast, showSuccessToast} from "../utils/notifications.js";
 
 const READ_BASE_URL = "http://localhost:5129";
 const WRITE_BASE_URL = "http://localhost:5228";
@@ -82,6 +83,7 @@ function ConfigurationsProvider({ children }) {
         setBuildingCost("");
         setConstructionTime("");
         setError("");
+        showSuccessToast(`${BuildingTypeLabels[buildingType]} configuration added! Values: cost:${buildingCost} , constructionTime:${constructionTime}`);
       } else {
         setError("Failed to add configuration. Please try again.");
       }
@@ -129,6 +131,7 @@ function ConfigurationsProvider({ children }) {
         setBuildingCost("");
         setConstructionTime("");
         setError("");
+        showSuccessToast(`${BuildingTypeLabels[buildingType]} configuration updated! Values: cost:${buildingCost} , constructionTime:${constructionTime}`);
       }
     } catch (error) {
       console.log(error.message)
@@ -151,6 +154,7 @@ function ConfigurationsProvider({ children }) {
 
       if (response.data.statusCode === 200) {
         setConfigurations(updatedConfigurations);
+        showSuccessToast(`${BuildingTypeLabels[buildingType]} configuration removed! Values: cost:${buildingCost} , constructionTime:${constructionTime}`);
       }
     } catch (error) {
       console.log(error.message)

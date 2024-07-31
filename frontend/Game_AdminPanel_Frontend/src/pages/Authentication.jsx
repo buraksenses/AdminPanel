@@ -4,6 +4,7 @@ import { useAuth } from "../security/AuthContext";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import Spinner from "../components/Spinner";
+import {showSuccessToast} from "../utils/notifications.js";
 
 function Authentication() {
   const { login, register, setIsAuthenticated } = useAuth();
@@ -35,6 +36,7 @@ function Authentication() {
     setIsLoading(false);
     if (success) {
       setIsAuthenticated(true);
+      showSuccessToast(`Logged in successfully! Welcome ${username}`)
       navigate("/dashboard");
     } else {
       alert("Login failed. Please check your username and password.");

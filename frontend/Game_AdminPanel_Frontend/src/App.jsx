@@ -8,6 +8,8 @@ import { AuthProvider } from "./security/AuthContext";
 import { ConfigurationsProvider } from "./Contexts/ConfigurationsContext";
 import { NavigateProvider } from './Contexts/NavigateContext.jsx';
 import PublicRoute from "./components/PublicRoute.jsx";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
@@ -35,6 +37,7 @@ function App() {
                   <Route path="/auth" element={<PublicRoute element={Authentication} />} />
                   <Route path="/dashboard" element={<PrivateRoute element={<BuildingConfig />} />} />
                 </Routes>
+                <ToastContainer />
               </NavigateProvider>
             </BrowserRouter>
           </ConfigurationsProvider>
