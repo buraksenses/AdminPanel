@@ -1264,6 +1264,7 @@
       },
       "AdminPanel.Identity.Domain/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.Extensions.Identity.Stores": "8.0.7"
         },
         "runtime": {
@@ -1273,6 +1274,7 @@
       "AdminPanel.Identity.Persistence/1.0.0": {
         "dependencies": {
           "AdminPanel.Identity.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.7",
           "Microsoft.EntityFrameworkCore": "8.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.7",

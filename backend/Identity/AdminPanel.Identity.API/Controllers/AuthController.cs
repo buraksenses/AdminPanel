@@ -19,6 +19,8 @@ public class AuthController : CustomBaseController
     public async Task<IActionResult> LoginAsync(LoginRequestDto requestDto)
     {
         var response = await _authService.LoginUserAsync(requestDto);
+        
+        Response.Cookies.Append("jwt", response.Data.token, response.Data.CookieOptions);
 
         return CreateActionResultInstance(response);
     }

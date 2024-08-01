@@ -1,3 +1,5 @@
-﻿namespace AdminPanel.Identity.Application.DTOs;
+﻿using Microsoft.AspNetCore.Http;
 
-public record LoginResponseDto(string jwtToken);
+namespace AdminPanel.Identity.Application.DTOs;
+
+public record LoginResponseDto(string token, CookieOptions CookieOptions);

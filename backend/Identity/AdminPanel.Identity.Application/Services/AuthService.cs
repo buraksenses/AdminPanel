@@ -44,8 +44,8 @@ public class AuthService : IAuthService
         if (!checkPasswordResult) 
             return Response<LoginResponseDto>.Fail("Username or password incorrect!", 404);
 
-        var jwtToken = _tokenRepository.CreateJwtToken(user);
-        var response = new LoginResponseDto(jwtToken);
+        var (token, cookieOptions) = _tokenRepository.CreateJwtToken(user);
+        var response = new LoginResponseDto(token, cookieOptions);
 
         return Response<LoginResponseDto>.Success(response, 200);
     }

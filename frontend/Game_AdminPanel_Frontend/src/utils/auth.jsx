@@ -1,6 +1,12 @@
-import { jwtDecode } from 'jwt-decode';
+import Cookies from 'js-cookie';
+import {jwtDecode} from 'jwt-decode';
 
-const isTokenExpired = (token) => {
+const COOKIE_NAME = 'jwt';
+
+const isTokenExpired = () => {
+    const token = Cookies.get(COOKIE_NAME);
+    if (!token) return true;
+
     try {
         const decodedToken = jwtDecode(token);
         const currentTime = Date.now() / 1000;
@@ -11,15 +17,15 @@ const isTokenExpired = (token) => {
 };
 
 const getToken = () => {
-    return localStorage.getItem('jwtToken');
+    return Cookies.get(COOKIE_NAME);
 };
 
 const setToken = (token) => {
-    localStorage.setItem('jwtToken', token);
+    Cookies.set(COOKIE_NAME, token, { secure: true, sameSite: 'Strict', expires: 1 });
 };
 
 const removeToken = () => {
-    localStorage.removeItem('jwtToken');
+    Cookies.remove(COOKIE_NAME);
 };
 
-export {isTokenExpired, getToken, setToken, removeToken};
+export { isTokenExpired, getToken, setToken, removeToken };

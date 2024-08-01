@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2MehQm70YrgHBDz46Ms2b+KMamlLp5PJ6LN73o+vftGeJyy79lZABIXvD1v6J6FNh+x6RH5/WrbSr9zzST2xMQ==",
+  "dgSpecHash": "nNU61kJuMxT2XZ5uuDRb7nz/ZRbDNoDN82DyOU6U/2Ri36xCw+LdJU0Wn8acBIqwvV3Q7CvvpZTz7pVQZrCGAA==",
   "success": true,
   "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Identity\\AdminPanel.Identity.API\\AdminPanel.Identity.API.csproj",
   "expectedPackageFiles": [

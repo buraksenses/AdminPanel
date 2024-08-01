@@ -3,6 +3,7 @@ import { getToken, isTokenExpired, removeToken } from '../utils/auth.jsx';
 
 const apiClient = axios.create({
     baseURL: 'http://localhost:5228',
+    withCredentials: true
 });
 
 apiClient.interceptors.request.use(

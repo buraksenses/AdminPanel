@@ -1,6 +1,6 @@
 import axios from "axios";
-import { createContext, useContext, useState } from "react";
-import {getToken, isTokenExpired, setToken} from "../utils/auth.jsx";
+import {createContext, useContext, useEffect, useState} from "react";
+import {getToken, isTokenExpired, removeToken, setToken} from "../utils/auth.jsx";
 
 const AuthContext = createContext();
 
@@ -10,6 +10,15 @@ function AuthProvider({ children }) {
   const token = getToken();
   const [isAuthenticated, setIsAuthenticated] = useState(token && !isTokenExpired(token));
   const [username, setUsername] = useState(null);
+
+  useEffect(() => {
+    const token = getToken();
+    if (token && !isTokenExpired(token)) {
+      setIsAuthenticated(true);
+    } else {
+      removeToken();
+    }
+  }, []);
 
   async function login(username, password) {
     try {
@@ -23,7 +32,8 @@ function AuthProvider({ children }) {
 
       if (response.data !== null) {
         setUsername(username);
-        setToken(response.data.data.jwtToken);
+        setToken(response.data.data.token);
+        setIsAuthenticated(true);
         return true;
       } else {
         setUsername(null);
@@ -67,7 +77,7 @@ function AuthProvider({ children }) {
   function logout() {
     setIsAuthenticated(false);
     setUsername(null);
-    localStorage.removeItem("jwtToken");
+    removeToken();
   }
 
   return (
