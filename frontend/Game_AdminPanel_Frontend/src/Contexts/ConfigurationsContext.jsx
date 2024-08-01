@@ -32,7 +32,7 @@ function ConfigurationsProvider({ children }) {
   const [selectedConfig, setSelectedConfig] = useState(null);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const {isAuthenticated, setIsAuthenticated} = useAuth();
+  const {setIsAuthenticated} = useAuth();
 
   useEffect(function () {
     async function fetchConfigurations() {
@@ -193,6 +193,7 @@ function ConfigurationsProvider({ children }) {
     if (error.message === 'Session expired') {
       showWarningToast("Your session has expired!")
       setIsAuthenticated(false);
+      reset();
       return true;
     }
     return false;
