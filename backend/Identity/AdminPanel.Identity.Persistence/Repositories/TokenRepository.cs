@@ -17,16 +17,12 @@ public class TokenRepository : ITokenRepository
         _configuration = configuration;
     }
     
-    public string CreateJwtToken(User user, List<string> roles)
+    public string CreateJwtToken(User user)
     {
-        var claims = new List<Claim>();
-
-        claims.Add(new Claim(ClaimTypes.Email,user.Email));
-        
-        foreach (var role in roles)
+        var claims = new List<Claim>
         {
-            claims.Add(new Claim(ClaimTypes.Role,role));
-        }
+            new(ClaimTypes.Name, user.UserName)
+        };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
 

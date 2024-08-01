@@ -15,7 +15,7 @@ public class BuildingsController : CustomBaseController
         _mediator = mediator;
     }
 
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> AddBuildingAsync(AddBuildingCommand command)
     {
@@ -23,7 +23,7 @@ public class BuildingsController : CustomBaseController
         return CreateActionResultInstance(response);
     }
 
-
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> RemoveBuildingAsync(Guid id)
     {
@@ -35,6 +35,7 @@ public class BuildingsController : CustomBaseController
         return CreateActionResultInstance(response);
     }
 
+    [Authorize]
     [HttpPut]
     public async Task<IActionResult> UpdateBuildingAsync(UpdateBuildingCommand command)
     {

@@ -4,5 +4,5 @@ namespace AdminPanel.Identity.Domain.Interfaces;
 
 public interface ITokenRepository
 {
-    string CreateJwtToken(User user, List<string> roles);
+    string CreateJwtToken(User user);
 }

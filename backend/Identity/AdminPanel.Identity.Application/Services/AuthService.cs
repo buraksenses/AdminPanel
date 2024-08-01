@@ -30,8 +30,6 @@ public class AuthService : IAuthService
         {
             return Response<IdentityResult>.Fail(result.Errors.Select(e => e.Description).ToList(), 400);
         }
-        
-        await _userManager.AddToRolesAsync(user, requestDto.roles);
         return Response<IdentityResult>.Success(result, 201);
     }
 
@@ -45,13 +43,8 @@ public class AuthService : IAuthService
 
         if (!checkPasswordResult) 
             return Response<LoginResponseDto>.Fail("Username or password incorrect!", 404);
-        
-        var roles = await _userManager.GetRolesAsync(user);
 
-        if (!roles.Any()) 
-            return Response<LoginResponseDto>.Fail("Username or password incorrect!", 404);
-        
-        var jwtToken = _tokenRepository.CreateJwtToken(user, roles.ToList());
+        var jwtToken = _tokenRepository.CreateJwtToken(user);
         var response = new LoginResponseDto(jwtToken);
 
         return Response<LoginResponseDto>.Success(response, 200);
