@@ -1,3 +1,17 @@
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.new-item-animation {
+  animation: grow 0.5s ease forwards;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -87,6 +101,26 @@ h1 {
 
 .grid-item:hover .overlay {
   display: flex;
+}
+
+.add-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 48px;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(255,255,255,0.6);
+}
+
+.add-item .plus-sign {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.add-item:hover {
+  background: rgba(255,255,255,0.7);
 }
 
 .overlay {

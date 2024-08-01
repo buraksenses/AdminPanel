@@ -8,7 +8,7 @@ using MediatR;
 
 namespace AdminPanel.BuildingConfiguration.Command.Application.Handlers;
 
-public class AddBuildingCommandHandler : IRequestHandler<AddBuildingCommand, Shared.DTOs.Response<AddBuildingDto>>
+public class AddBuildingCommandHandler : IRequestHandler<AddBuildingCommand, Shared.DTOs.Response<AddBuildingResponseDto>>
 {
     private readonly IEventSourcingHandler<BuildingAggregate> _eventSourcingHandler;
     private readonly IPublishEndpoint _publishEndpoint;
@@ -19,7 +19,7 @@ public class AddBuildingCommandHandler : IRequestHandler<AddBuildingCommand, Sha
         _publishEndpoint = publishEndpoint;
     }
     
-    public async Task<Shared.DTOs.Response<AddBuildingDto>> Handle(AddBuildingCommand request, CancellationToken cancellationToken)
+    public async Task<Shared.DTOs.Response<AddBuildingResponseDto>> Handle(AddBuildingCommand request, CancellationToken cancellationToken)
     {
         var aggregate = new BuildingAggregate(Guid.NewGuid(), request.BuildingType, request.BuildingCost, request.ConstructionTime);
         
@@ -28,8 +28,8 @@ public class AddBuildingCommandHandler : IRequestHandler<AddBuildingCommand, Sha
         await _publishEndpoint.Publish<CreateBuildingMessage>(new CreateBuildingMessage(aggregate.Id,
             request.BuildingType, request.BuildingCost, request.ConstructionTime));
 
-        return Shared.DTOs.Response<AddBuildingDto>.Success(
-            new AddBuildingDto(request.BuildingType,request.BuildingCost,request.ConstructionTime),
+        return Shared.DTOs.Response<AddBuildingResponseDto>.Success(
+            new AddBuildingResponseDto(aggregate.Id, request.BuildingType, request.BuildingCost, request.ConstructionTime),
             201);
     }
 }

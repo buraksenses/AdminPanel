@@ -2,24 +2,17 @@ import "../ConfigurationPage.css";
 import Modal from "../components/Modal";
 import Grid from "../components/Grid";
 import { useConfig } from "../Contexts/ConfigurationsContext";
+import Confetti from "react-confetti";
 
 const ConfigurationPage = () => {
-  const { setModalType, setShowModal, showModal } = useConfig();
+  const { showModal, confetti } = useConfig();
 
   return (
     <div className="configuration-page">
       <h1>Building Configuration</h1>
       <Grid />
-      <button
-        className="add-button"
-        onClick={() => {
-          setModalType("add");
-          setShowModal(true);
-        }}
-      >
-        Add Configuration
-      </button>
       {showModal && <Modal />}
+        {confetti && <Confetti />}
     </div>
   );
 };

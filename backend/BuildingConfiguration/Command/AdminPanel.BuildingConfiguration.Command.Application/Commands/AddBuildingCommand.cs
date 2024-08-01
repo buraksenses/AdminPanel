@@ -5,7 +5,7 @@ using MediatR;
 
 namespace AdminPanel.BuildingConfiguration.Command.Application.Commands;
 
-public class AddBuildingCommand : IRequest<Response<AddBuildingDto>>
+public class AddBuildingCommand : IRequest<Response<AddBuildingResponseDto>>
 {
     public BuildingType BuildingType { get; set; }
 

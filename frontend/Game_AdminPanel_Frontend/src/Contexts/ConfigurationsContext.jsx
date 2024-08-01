@@ -33,6 +33,30 @@ function ConfigurationsProvider({ children }) {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const {setIsAuthenticated} = useAuth();
+  const [confetti, setConfetti] = useState(false);
+  const [newConfigIndex, setNewConfigIndex] = useState(null);
+
+  useEffect(() => {
+    if (!showModal && confetti) {
+      setConfetti(false);
+    }
+  }, [showModal, configurations, confetti]);
+
+  const triggerConfetti = () => {
+    setConfetti(true);
+    setTimeout(() => setConfetti(false), 2000);
+  };
+
+  useEffect(() => {
+    if (newConfigIndex !== null) {
+      const timer = setTimeout(() => {
+        setNewConfigIndex(null);
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [newConfigIndex]);
+
 
   useEffect(function () {
     async function fetchConfigurations() {
@@ -79,12 +103,14 @@ function ConfigurationsProvider({ children }) {
       );
 
       if (response.data.statusCode === 201) {
-        setConfigurations([...configurations, newConfiguration]);
+        setConfigurations([...configurations, response.data.data]);
+        setNewConfigIndex(configurations.length);
         setShowModal(false);
         setBuildingType("");
         setBuildingCost("");
         setConstructionTime("");
         setError("");
+        setTimeout(() => triggerConfetti(), 500);
         showSuccessToast(`${BuildingTypeLabels[buildingType]} configuration added! Values: cost:${buildingCost} , constructionTime:${constructionTime}`);
       } else {
         setError("Failed to add configuration. Please try again.");
@@ -147,14 +173,15 @@ function ConfigurationsProvider({ children }) {
   };
 
   const handleRemoveConfiguration = async (configToRemove) => {
-    const updatedConfigurations = configurations.filter(
-      (config) => config !== configToRemove
-    );
+
 
     try {
       const response = await apiClient.delete(`${WRITE_BASE_URL}/api/buildings/${configToRemove.id}`);
 
       if (response.data.statusCode === 200) {
+        const updatedConfigurations = configurations.filter(
+            (config) => config.id !== configToRemove.id
+        );
         setConfigurations(updatedConfigurations);
         showSuccessToast(`${BuildingTypeLabels[buildingType]} configuration removed! Values: cost:${buildingCost} , constructionTime:${constructionTime}`);
       }
@@ -213,6 +240,9 @@ function ConfigurationsProvider({ children }) {
         selectedConfig,
         error,
         isLoading,
+        confetti,
+        newConfigIndex,
+        triggerConfetti,
         handleAddConfiguration,
         handleUpdateConfiguration,
         handleRemoveConfiguration,

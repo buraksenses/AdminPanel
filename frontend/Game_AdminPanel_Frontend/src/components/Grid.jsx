@@ -1,13 +1,24 @@
 import { useConfig } from "../Contexts/ConfigurationsContext";
 import {BuildingTypeLabels} from "../enums/Enums.js";
 
+
 function Grid() {
   const {
     configurations,
     buildingTypes,
     openUpdateModal,
     handleRemoveConfiguration,
+    setModalType,
+    setShowModal,
+      newConfigIndex,
   } = useConfig();
+
+
+
+  const handleAddNewConfiguration = () => {
+    setModalType("add");
+    setShowModal(true);
+  };
 
   return (
       <div className="grid">
@@ -20,8 +31,11 @@ function Grid() {
 
           const icon = buildingTypeObj ? buildingTypeObj.icon : null;
 
+          const itemClass = index === newConfigIndex ? 'grid-item new-item-animation' : 'grid-item';
+
+
           return (
-              <div className="grid-item" key={index}>
+              <div className={itemClass} key={index}>
                 {icon && <img src={icon} alt={BuildingTypeLabels[config.buildingType]}/>}
                 <div className="grid-item-details">
                   <h3>{BuildingTypeLabels[config.buildingType]}</h3>
@@ -35,6 +49,10 @@ function Grid() {
               </div>
           );
         })}
+        <div className="grid-item add-item" onClick={handleAddNewConfiguration}>
+          <div className="plus-sign">+</div>
+        </div>
+
       </div>
   );
 }
