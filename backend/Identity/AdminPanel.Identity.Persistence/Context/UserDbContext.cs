@@ -1,4 +1,5 @@
-﻿using AdminPanel.Identity.Domain.Entities;
+﻿using AdminPanel.Identity.Domain;
+using AdminPanel.Identity.Domain.Entities;
 using AdminPanel.Identity.Persistence.Extensions;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -18,4 +19,6 @@ public class UserDbContext : IdentityDbContext<User>
         
         builder.Seed();
     }
+
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
 }

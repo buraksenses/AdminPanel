@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 import {jwtDecode} from 'jwt-decode';
 
-const COOKIE_NAME = 'jwt';
+const COOKIE_NAME = 'accessToken';
 
 const isTokenExpired = () => {
     const token = Cookies.get(COOKIE_NAME);
@@ -20,8 +20,8 @@ const getToken = () => {
     return Cookies.get(COOKIE_NAME);
 };
 
-const setToken = (token) => {
-    Cookies.set(COOKIE_NAME, token, { secure: true, sameSite: 'Strict', expires: 1 });
+const setToken = (token, cookieName, options) => {
+    Cookies.set(cookieName, token, { secure: options.secure, sameSite: options.sameSite, expires: options.expires });
 };
 
 const removeToken = () => {

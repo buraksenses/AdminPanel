@@ -1,10 +1,10 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import "../App.css";
 import { useAuth } from "../security/AuthContext";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import Spinner from "../components/Spinner";
-import {showSuccessToast} from "../utils/notifications.js";
+import {showSuccessToast, showWarningToast} from "../utils/notifications.js";
 
 function Authentication() {
   const { login, register, setIsAuthenticated } = useAuth();
@@ -37,6 +37,7 @@ function Authentication() {
     if (success) {
       setIsAuthenticated(true);
       showSuccessToast(`Logged in successfully! Welcome ${username}`)
+      setIsSessionExpired(false);
       navigate("/dashboard", {replace: true});
     } else {
       alert("Login failed. Please check your username and password.");

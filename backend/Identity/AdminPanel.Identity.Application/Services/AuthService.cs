@@ -3,7 +3,9 @@ using AdminPanel.Identity.Application.Interfaces;
 using AdminPanel.Identity.Application.Mappings;
 using AdminPanel.Identity.Domain.Entities;
 using AdminPanel.Identity.Domain.Interfaces;
+using AdminPanel.Identity.Persistence.Repositories;
 using AdminPanel.Shared.DTOs;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 
 namespace AdminPanel.Identity.Application.Services;
@@ -12,11 +14,13 @@ public class AuthService : IAuthService
 {
     private readonly UserManager<User> _userManager;
     private readonly ITokenRepository _tokenRepository;
+    private readonly IUserRepository _userRepository;
 
-    public AuthService(UserManager<User> userManager, ITokenRepository tokenRepository)
+    public AuthService(UserManager<User> userManager, ITokenRepository tokenRepository, IUserRepository userRepository)
     {
         _userManager = userManager;
         _tokenRepository = tokenRepository;
+        _userRepository = userRepository;
     }
 
 
@@ -45,8 +49,22 @@ public class AuthService : IAuthService
             return Response<LoginResponseDto>.Fail("Username or password incorrect!", 404);
 
         var (token, cookieOptions) = _tokenRepository.CreateJwtToken(user);
-        var response = new LoginResponseDto(token, cookieOptions);
+        var refreshToken = TokenRepository.GenerateRefreshToken();
+
+        await _userRepository.AddRefreshToken(user, refreshToken);
+        await _userRepository.UpdateUserAsync(user);
+        
+        
+        var response = new LoginResponseDto(token, refreshToken, cookieOptions);
 
         return Response<LoginResponseDto>.Success(response, 200);
+    }
+
+    public async Task<Response<RefreshTokenDto>> RefreshTokenAsync(string? token)
+    {
+        var data = await _tokenRepository.CreateRefreshToken(token);
+
+        return Response<RefreshTokenDto>.Success(
+            new RefreshTokenDto(data.Item1.token, data.newRefreshToken, data.Item1.cookieOptions), 200);
     }
 }

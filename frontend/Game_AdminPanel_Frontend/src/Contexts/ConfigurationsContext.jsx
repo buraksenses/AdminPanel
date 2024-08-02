@@ -32,7 +32,7 @@ function ConfigurationsProvider({ children }) {
   const [selectedConfig, setSelectedConfig] = useState(null);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const {setIsAuthenticated} = useAuth();
+  const {setIsAuthenticated, setIsSessionExpired} = useAuth();
   const [confetti, setConfetti] = useState(false);
   const [newConfigIndex, setNewConfigIndex] = useState(null);
 
@@ -162,13 +162,17 @@ function ConfigurationsProvider({ children }) {
         showSuccessToast(`${BuildingTypeLabels[buildingType]} configuration updated! Values: cost:${buildingCost} , constructionTime:${constructionTime}`);
       }
     } catch (error) {
-      console.log(error.message)
+      if (error.response && error.response.status === 401) {
+        console.log("Token expired. Redirecting to login.");
+        window.location.href = '/auth';
+        return;
+      }
 
       if (checkSessionExpired(error))
         return;
 
       setError("Failed to update configuration. Please try again.");
-      alert(`There was an error updating the configuration: ${error.message}`);
+      //alert(`There was an error updating the configuration: ${error.message}`);
     }
   };
 
@@ -217,7 +221,7 @@ function ConfigurationsProvider({ children }) {
   }
 
   const checkSessionExpired = (error) => {
-    if (error.message === 'Session expired') {
+    if (error.message === 'Session expired!') {
       showWarningToast("Your session has expired!")
       setIsAuthenticated(false);
       reset();

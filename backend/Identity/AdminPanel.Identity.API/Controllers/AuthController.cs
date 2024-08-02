@@ -20,7 +20,14 @@ public class AuthController : CustomBaseController
     {
         var response = await _authService.LoginUserAsync(requestDto);
         
-        Response.Cookies.Append("jwt", response.Data.token, response.Data.CookieOptions);
+        Response.Cookies.Append("accessToken", response.Data.accessToken, response.Data.CookieOptions);
+        Response.Cookies.Append("refreshToken", response.Data.refreshToken.Token, new CookieOptions
+        {
+            HttpOnly = true,
+            Secure = false,
+            SameSite = SameSiteMode.Strict,
+            Expires = response.Data.refreshToken.Expires
+        });
 
         return CreateActionResultInstance(response);
     }
@@ -32,5 +39,20 @@ public class AuthController : CustomBaseController
         var result = await _authService.RegisterUserAsync(requestDto);
 
         return CreateActionResultInstance(result);
+    }
+
+    [HttpPost]
+    [Route("refresh-token")]
+    public async Task<IActionResult> RefreshTokenAsync()
+    {
+        var isExist = Request.Cookies.TryGetValue("refreshToken", out var value);
+        if (!isExist)
+            return BadRequest("Refresh token is null!");
+        
+        var response = await _authService.RefreshTokenAsync(value);
+        
+        Response.Cookies.Append("accessToken", response.Data.AccessToken, response.Data.CookieOptions);
+
+        return CreateActionResultInstance(response);
     }
 }

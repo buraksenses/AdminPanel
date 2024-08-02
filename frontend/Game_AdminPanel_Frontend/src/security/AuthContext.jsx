@@ -32,7 +32,9 @@ function AuthProvider({ children }) {
 
       if (response.data !== null) {
         setUsername(username);
-        setToken(response.data.data.token);
+        const inOneMinute = new Date(new Date().getTime() + 60 * 1000);
+        setToken(response.data.data.accessToken, 'accessToken', {secure: true, sameSite: 'Strict', expires: inOneMinute});
+        setToken(response.data.data.refreshToken.token, 'refreshToken', {secure: true, sameSite: 'Strict', expires: new Date(new Date().getTime() + 60 * 3000)});
         setIsAuthenticated(true);
         return true;
       } else {
@@ -82,7 +84,7 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, login, register, logout, username, setIsAuthenticated }}
+      value={{ isAuthenticated, login, register, logout, username, setIsAuthenticated}}
     >
       {children}
     </AuthContext.Provider>
