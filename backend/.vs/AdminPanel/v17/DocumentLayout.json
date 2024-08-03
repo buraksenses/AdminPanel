@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B7CE0285-418F-4716-91D4-F31E560F5112}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{B7CE0285-418F-4716-91D4-F31E560F5112}|Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B7CE0285-418F-4716-91D4-F31E560F5112}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{B7CE0285-418F-4716-91D4-F31E560F5112}|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7CE0285-418F-4716-91D4-F31E560F5112}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{B7CE0285-418F-4716-91D4-F31E560F5112}|Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Dockerfile.BuildingConfiguration.Query||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B7CE0285-418F-4716-91D4-F31E560F5112}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{B7CE0285-418F-4716-91D4-F31E560F5112}|solutionrelative:Dockerfile.BuildingConfiguration.Query||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7CE0285-418F-4716-91D4-F31E560F5112}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{B7CE0285-418F-4716-91D4-F31E560F5112}|Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Dockerfile.Identity||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B7CE0285-418F-4716-91D4-F31E560F5112}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{B7CE0285-418F-4716-91D4-F31E560F5112}|solutionrelative:Dockerfile.Identity||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7CE0285-418F-4716-91D4-F31E560F5112}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{B7CE0285-418F-4716-91D4-F31E560F5112}|Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Dockerfile.BuildingConfiguration.Command||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B7CE0285-418F-4716-91D4-F31E560F5112}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{B7CE0285-418F-4716-91D4-F31E560F5112}|solutionrelative:Dockerfile.BuildingConfiguration.Command||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 129,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-08-03T21:56:44.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dockerfile.BuildingConfiguration.Query",
+              "DocumentMoniker": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Dockerfile.BuildingConfiguration.Query",
+              "RelativeDocumentMoniker": "Dockerfile.BuildingConfiguration.Query",
+              "ToolTip": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Dockerfile.BuildingConfiguration.Query",
+              "RelativeToolTip": "Dockerfile.BuildingConfiguration.Query",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-08-03T21:56:29.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dockerfile.BuildingConfiguration.Command",
+              "DocumentMoniker": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Dockerfile.BuildingConfiguration.Command",
+              "RelativeDocumentMoniker": "Dockerfile.BuildingConfiguration.Command",
+              "ToolTip": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Dockerfile.BuildingConfiguration.Command",
+              "RelativeToolTip": "Dockerfile.BuildingConfiguration.Command",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-08-03T21:55:46.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dockerfile.Identity",
+              "DocumentMoniker": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Dockerfile.Identity",
+              "RelativeDocumentMoniker": "Dockerfile.Identity",
+              "ToolTip": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\Dockerfile.Identity",
+              "RelativeToolTip": "Dockerfile.Identity",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAACFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-08-03T21:54:41.403Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

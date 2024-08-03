@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1G1VgbFkRtUCGuUmcDUl0o2cgL0Qis6wwaTVAGh+p+JPv/Z/fqe+3eNGt+9uu8TnrokHYNjnpfc9qmr5gmA4eA==",
+  "dgSpecHash": "fMgSzVol7HA=",
   "success": true,
   "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Command\\AdminPanel.BuildingConfiguration.Command.Domain\\AdminPanel.BuildingConfiguration.Command.Domain.csproj",
   "expectedPackageFiles": [

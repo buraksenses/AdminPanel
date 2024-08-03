@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mN30vojqGo3XifC2VtvnSxqwLmH5SE4fDO5o4cDT4pcmvomqboecZ6ZQRmxpYIi1B9oSHsmKLcB9D7cBTVB6aQ==",
+  "dgSpecHash": "o1mfIi0yZF4=",
   "success": true,
   "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Query\\AdminPanel.BuildingConfiguration.Query.API\\AdminPanel.BuildingConfiguration.Query.API.csproj",
   "expectedPackageFiles": [
@@ -78,6 +78,7 @@
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\Burak\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.20.1\\microsoft.visualstudio.azure.containers.tools.targets.1.20.1.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\mongodb.bson\\2.28.0\\mongodb.bson.2.28.0.nupkg.sha512",

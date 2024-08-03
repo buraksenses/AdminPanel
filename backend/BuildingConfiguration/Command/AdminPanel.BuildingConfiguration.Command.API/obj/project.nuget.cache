@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zYv1xsFBYOW1PxrdZX4dyAGWVYyjpT2zgVE6EpLv00olOh8PgTN4mtYeWDNTVjwwhrdeSHlKumpYB2Xdru3u4g==",
+  "dgSpecHash": "YRezT7CO6DQ=",
   "success": true,
   "projectFilePath": "Z:\\.NETProjects\\AdminPanel\\AdminPanel\\backend\\BuildingConfiguration\\Command\\AdminPanel.BuildingConfiguration.Command.API\\AdminPanel.BuildingConfiguration.Command.API.csproj",
   "expectedPackageFiles": [
@@ -59,6 +59,7 @@
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\Burak\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.20.1\\microsoft.visualstudio.azure.containers.tools.targets.1.20.1.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\mongodb.bson\\2.28.0\\mongodb.bson.2.28.0.nupkg.sha512",
     "C:\\Users\\Burak\\.nuget\\packages\\mongodb.driver\\2.28.0\\mongodb.driver.2.28.0.nupkg.sha512",
