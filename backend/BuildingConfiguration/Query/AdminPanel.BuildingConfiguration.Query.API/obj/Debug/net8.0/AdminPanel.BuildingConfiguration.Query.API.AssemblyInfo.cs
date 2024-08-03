@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdminPanel.BuildingConfiguration.Query.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d8475709321ebf82291b8221ca5bd0559b9f75f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1a5bd15819ac8473314f12fb1074a6da2dd0e51")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdminPanel.BuildingConfiguration.Query.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdminPanel.BuildingConfiguration.Query.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

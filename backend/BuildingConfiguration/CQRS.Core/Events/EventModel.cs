@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using AdminPanel.BuildingConfiguration.Command.Persistence.Config;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace CQRS.Core.Events;
@@ -13,5 +14,6 @@ public class EventModel
     public string AggregateType { get; set; }
     public int Version { get; set; }
     public string EventType { get; set; }
+    [BsonSerializer(typeof(EventDataSerializer))]
     public BaseEvent EventData { get; set; }
 }
