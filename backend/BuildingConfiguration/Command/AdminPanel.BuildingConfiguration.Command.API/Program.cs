@@ -7,8 +7,8 @@ using AdminPanel.BuildingConfiguration.Command.Persistence.Handlers;
 using AdminPanel.BuildingConfiguration.Command.Persistence.Repositories;
 using AdminPanel.BuildingConfiguration.Command.Persistence.Stores;
 using AdminPanel.Shared.Exceptions;
-using Common.Events;
 using CQRS.Core.Domain;
+using CQRS.Core.Domain.Enums;
 using CQRS.Core.Events;
 using CQRS.Core.Handlers;
 using CQRS.Core.Infrastructure;
@@ -17,7 +17,9 @@ using FluentValidation.AspNetCore;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,9 +37,29 @@ builder.Services.AddMassTransit(x =>
 });
 
 BsonClassMap.RegisterClassMap<BaseEvent>();
-BsonClassMap.RegisterClassMap<BuildingCreatedEvent>();
-BsonClassMap.RegisterClassMap<BuildingRemovedEvent>();
-BsonClassMap.RegisterClassMap<BuildingUpdatedEvent>();
+BsonClassMap.RegisterClassMap<BuildingCreatedEvent>(cm =>
+{
+    cm.AutoMap();
+    cm.SetIgnoreExtraElements(true);
+    cm.GetMemberMap(c => c.BuildingType).SetSerializer(new EnumSerializer<BuildingType>(BsonType.String));
+});
+
+BsonClassMap.RegisterClassMap<BuildingUpdatedEvent>(cm =>
+{
+    cm.AutoMap();
+    cm.SetIgnoreExtraElements(true);
+});
+
+BsonClassMap.RegisterClassMap<BuildingRemovedEvent>(cm =>
+{
+    cm.AutoMap();
+    cm.SetIgnoreExtraElements(true);
+});
+
+BsonSerializer.RegisterSerializer(typeof(BaseEvent), new EventDataSerializer());
+
+//BsonSerializer.RegisterSerializer(typeof(BaseEvent), new EventDataSerializer());
+
 
 builder.Services.AddControllers();
 

@@ -1,6 +1,4 @@
-﻿using CQRS.Core.Events;
-
-namespace Common.Events;
+﻿namespace CQRS.Core.Events;
 
 public class BuildingUpdatedEvent : BaseEvent
 {

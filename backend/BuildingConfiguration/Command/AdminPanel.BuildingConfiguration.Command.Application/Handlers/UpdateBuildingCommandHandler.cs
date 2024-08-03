@@ -1,7 +1,7 @@
 ﻿using AdminPanel.BuildingConfiguration.Command.Application.Commands;
 using AdminPanel.BuildingConfiguration.Command.Application.DTOs;
 using AdminPanel.BuildingConfiguration.Command.Domain.Aggregates;
-using Common.Events;
+using CQRS.Core.Events;
 using CQRS.Core.Handlers;
 using CQRS.Core.Messages;
 using MassTransit;

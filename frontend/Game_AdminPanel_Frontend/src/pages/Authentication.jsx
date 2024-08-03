@@ -37,7 +37,6 @@ function Authentication() {
     if (success) {
       setIsAuthenticated(true);
       showSuccessToast(`Logged in successfully! Welcome ${username}`)
-      setIsSessionExpired(false);
       navigate("/dashboard", {replace: true});
     } else {
       alert("Login failed. Please check your username and password.");
