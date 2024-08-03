@@ -4,4 +4,4 @@ using MediatR;
 
 namespace AdminPanel.BuildingConfiguration.Query.Application.Queries;
 
-public record GetAllBuildingsQuery() : IRequest<Response<List<BuildingDto>>>;
+public record GetAllBuildingsQuery : IRequest<Response<List<BuildingDto>>>;

@@ -5,11 +5,4 @@ using MediatR;
 
 namespace AdminPanel.BuildingConfiguration.Command.Application.Commands;
 
-public class AddBuildingCommand : IRequest<Response<AddBuildingResponseDto>>
-{
-    public BuildingType BuildingType { get; set; }
-
-    public decimal BuildingCost { get; set; }
-
-    public int ConstructionTime { get; set; }
-}
+public record AddBuildingCommand(BuildingType BuildingType, decimal BuildingCost, int ConstructionTime) : IRequest<Response<AddBuildingResponseDto>>;

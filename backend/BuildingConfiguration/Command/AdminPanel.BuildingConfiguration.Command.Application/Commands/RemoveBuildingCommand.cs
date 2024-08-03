@@ -4,7 +4,4 @@ using MediatR;
 
 namespace AdminPanel.BuildingConfiguration.Command.Application.Commands;
 
-public class RemoveBuildingCommand : IRequest<Response<RemoveBuildingDto>>
-{
-    public Guid BuildingId { get; set; }
-}
+public record RemoveBuildingCommand(Guid BuildingId) : IRequest<Response<RemoveBuildingDto>>;
