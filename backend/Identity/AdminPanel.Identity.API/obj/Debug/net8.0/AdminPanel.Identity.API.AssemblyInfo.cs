@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdminPanel.Identity.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33e6fbfc26588ae363214951258ed60969711494")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ebcca204a14ad1f8072c31d42faab47c6b3c68f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdminPanel.Identity.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdminPanel.Identity.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
