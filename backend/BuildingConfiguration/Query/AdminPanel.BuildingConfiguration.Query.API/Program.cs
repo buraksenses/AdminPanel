@@ -1,11 +1,14 @@
 using AdminPanel.BuildingConfiguration.Query.Application.Consumers;
 using AdminPanel.BuildingConfiguration.Query.Application.Handlers;
+using AdminPanel.BuildingConfiguration.Query.Domain.Entities;
 using AdminPanel.BuildingConfiguration.Query.Domain.Repositories;
 using AdminPanel.BuildingConfiguration.Query.Persistence.DataAccess;
 using AdminPanel.BuildingConfiguration.Query.Persistence.Repositories;
 using AdminPanel.Shared.Exceptions;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Bson.Serialization;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +42,7 @@ builder.Services.AddMassTransit(x =>
         });
     });
 });
+BsonClassMap.RegisterClassMap<Building>();
 
 builder.Services.AddScoped<BuildingCreatedEventConsumer>();
 builder.Services.AddScoped<BuildingRemovedEventConsumer>();
@@ -47,6 +51,12 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+builder.Services.Configure<MongoDbConfig>(builder.Configuration.GetSection(nameof(MongoDbConfig)));
+
+builder.Services.AddSingleton<IMongoClient, MongoClient>(
+    sp => new MongoClient(builder.Configuration.GetValue<string>("MongoDbConfig:ConnectionString")));
 
 builder.Services.AddDbContext<BuildingDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BuildingConnectionString")));

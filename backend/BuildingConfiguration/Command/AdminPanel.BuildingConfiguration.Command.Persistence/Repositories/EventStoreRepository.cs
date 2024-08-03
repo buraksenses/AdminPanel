@@ -1,6 +1,6 @@
-﻿using CQRS.Core.Domain;
+﻿using AdminPanel.BuildingConfiguration.Command.Persistence.Config;
+using CQRS.Core.Domain;
 using CQRS.Core.Events;
-using EcoVerse.StockManagement.Command.Infrastructure.Config;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 

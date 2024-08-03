@@ -1,4 +1,4 @@
-﻿namespace AdminPanel.BuildingConfiguration.Command.Persistence.Config;
+﻿namespace AdminPanel.BuildingConfiguration.Query.Persistence.DataAccess;
 
 public class MongoDbConfig
 {
