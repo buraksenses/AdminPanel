@@ -10,5 +10,5 @@ public class RefreshToken
     public DateTime Created { get; set; }
     public DateTime? Revoked { get; set; }
     
-    public bool IsActive => Revoked == null && !IsExpired;
+    public bool IsActive =>  !IsExpired;
 }

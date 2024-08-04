@@ -16,6 +16,7 @@ const isTokenExpired = () => {
     }
 };
 
+
 const getToken = () => {
     return Cookies.get(COOKIE_NAME);
 };

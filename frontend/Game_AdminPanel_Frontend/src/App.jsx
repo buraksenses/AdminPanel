@@ -13,9 +13,9 @@ function App() {
 
   return (
       <div>
+        <BrowserRouter>
         <AuthProvider>
           <ConfigurationsProvider>
-            <BrowserRouter>
               <NavigateProvider>
                 <Routes>
                   <Route path="/auth" element={<PublicRoute element={Authentication} />} />
@@ -23,9 +23,9 @@ function App() {
                 </Routes>
                 <ToastContainer />
               </NavigateProvider>
-            </BrowserRouter>
           </ConfigurationsProvider>
         </AuthProvider>
+        </BrowserRouter>
       </div>
   );
 }

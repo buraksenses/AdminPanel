@@ -32,9 +32,9 @@ function ConfigurationsProvider({ children }) {
   const [selectedConfig, setSelectedConfig] = useState(null);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const {setIsAuthenticated, setIsSessionExpired} = useAuth();
   const [confetti, setConfetti] = useState(false);
   const [newConfigIndex, setNewConfigIndex] = useState(null);
+  const {setIsAuthenticated, setIsSessionExpired} = useAuth();
 
   useEffect(() => {
     if (!showModal && confetti) {
