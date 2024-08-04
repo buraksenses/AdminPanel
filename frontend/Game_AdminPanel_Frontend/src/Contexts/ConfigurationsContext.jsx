@@ -34,7 +34,7 @@ function ConfigurationsProvider({ children }) {
   const [isLoading, setIsLoading] = useState(false);
   const [confetti, setConfetti] = useState(false);
   const [newConfigIndex, setNewConfigIndex] = useState(null);
-  const {setIsAuthenticated, setIsSessionExpired} = useAuth();
+  const {setIsAuthenticated, isLogin} = useAuth();
 
   useEffect(() => {
     if (!showModal && confetti) {
@@ -60,6 +60,8 @@ function ConfigurationsProvider({ children }) {
 
   useEffect(function () {
     async function fetchConfigurations() {
+      if(!isLogin)
+        return;
       try {
         setIsLoading(true);
         const res = await fetch(`${READ_BASE_URL}/api/buildings`);
@@ -79,7 +81,7 @@ function ConfigurationsProvider({ children }) {
       }
     }
     fetchConfigurations();
-  }, []);
+  }, [isLogin]);
 
   const handleAddConfiguration = async () => {
     if (

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdminPanel.Identity.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdd23372201fd0bab53da7e17f4ccbde0cc54a45")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68942adb806db18570d13ee9230ae752eb067ee1")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdminPanel.Identity.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdminPanel.Identity.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

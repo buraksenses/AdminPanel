@@ -50,7 +50,7 @@ public class TokenRepository : ITokenRepository
         return (new JwtSecurityTokenHandler().WriteToken(token), _cookieOptions);
     }
 
-    public async Task<((string token, CookieOptions cookieOptions), string newRefreshToken)> CreateRefreshToken(string? token)
+    public async Task<((string token, CookieOptions cookieOptions), RefreshToken newRefreshToken)> CreateRefreshToken(string? token)
     {
         var user = await _userRepository.GetUserByRefreshToken(token);
         if (user == null) throw new UnauthorizedAccessException("Invalid token");
@@ -67,7 +67,7 @@ public class TokenRepository : ITokenRepository
         await _userRepository.AddRefreshToken(user, newRefreshToken);
         await _userRepository.UpdateUserAsync(user);
 
-        return (newJwtToken, newRefreshToken.Token);
+        return (newJwtToken, newRefreshToken);
     }
 
 

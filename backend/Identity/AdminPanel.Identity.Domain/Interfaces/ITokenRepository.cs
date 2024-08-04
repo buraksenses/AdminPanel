@@ -7,5 +7,5 @@ public interface ITokenRepository
 {
     (string token, CookieOptions cookieOptions) CreateJwtToken(User user);
 
-    Task<((string token, CookieOptions cookieOptions), string newRefreshToken)> CreateRefreshToken(string? token);
+    Task<((string token, CookieOptions cookieOptions), RefreshToken newRefreshToken)> CreateRefreshToken(string? token);
 }

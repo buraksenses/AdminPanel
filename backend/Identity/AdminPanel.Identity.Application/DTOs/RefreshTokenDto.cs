@@ -1,5 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AdminPanel.Identity.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 
 namespace AdminPanel.Identity.Application.DTOs;
 
-public record RefreshTokenDto(string AccessToken, string RefreshToken, CookieOptions CookieOptions);
+public record RefreshTokenDto(string AccessToken, RefreshToken RefreshToken, CookieOptions CookieOptions);
