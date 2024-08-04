@@ -19,7 +19,7 @@ services:
       context: .
       dockerfile: Dockerfile.Identity
     ports:
-      - "5218:80"
+      - "5218:8080"
     depends_on:
       - sqlserver_db
     networks:
@@ -40,7 +40,7 @@ services:
       context: .
       dockerfile: Dockerfile.BuildingConfiguration.Command
     ports:
-      - "5228:80"
+      - "5228:8080"
     depends_on:
       - mongodb
     networks:
@@ -51,7 +51,7 @@ services:
       context: .
       dockerfile: Dockerfile.BuildingConfiguration.Query
     ports:
-      - "5129:80"
+      - "5129:8080"
     depends_on:
       - mongodb
     networks:

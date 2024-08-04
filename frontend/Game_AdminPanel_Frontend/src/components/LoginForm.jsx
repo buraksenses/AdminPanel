@@ -1,46 +1,52 @@
-function LoginForm({
-  handleSubmit,
-  setUsername,
-  setPassword,
-  setConfirmPassword,
-  setEmail,
-  isLogin,
-}) {
+export default function LoginForm({
+                     handleSubmit,
+                     username,
+                     setUsername,
+                     password,
+                     setPassword,
+                     confirmPassword,
+                     setConfirmPassword,
+                     email,
+                     setEmail,
+                     isLogin,
+                   }) {
   return (
-    <div>
-      <form className="auth-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        {!isLogin && (
-          <>
-            <input
+      <div>
+        <form className="auth-form" onSubmit={handleSubmit}>
+          <input
+              type="text"
+              placeholder="Username"
+              value={username || ''}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+          />
+          <input
               type="password"
-              placeholder="Confirm Password"
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="Password"
+              value={password || ''}
+              onChange={(e) => setPassword(e.target.value)}
               required
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </>
-        )}
-        <button type="submit">{isLogin ? "Login" : "Register"}</button>
-      </form>
-    </div>
+          />
+          {!isLogin && (
+              <>
+                <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    value={confirmPassword || ''}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    required
+                />
+                <input
+                    type="email"
+                    placeholder="Email"
+                    value={email || ''}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+              </>
+          )}
+          <button type="submit">{isLogin ? "Login" : "Register"}</button>
+        </form>
+      </div>
   );
 }
-
-export default LoginForm;

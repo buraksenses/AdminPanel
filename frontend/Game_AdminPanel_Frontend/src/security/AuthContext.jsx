@@ -1,6 +1,8 @@
 import axios from "axios";
 import {createContext, useContext, useEffect, useState} from "react";
 import {getToken, isTokenExpired, removeToken, setToken} from "../utils/auth.jsx";
+import {showSuccessToast} from "../utils/notifications.js";
+import {useNavigate} from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -55,18 +57,18 @@ function AuthProvider({ children }) {
         "http://localhost:5218/api/Auth/register",
         {
           username,
-          password,
-          roles: ["Admin"],
+          password
         }
       );
 
       console.log(response.data);
 
-      if (response.data.data === null) {
+      if (response.data === null) {
         setIsAuthenticated(false);
-        setUsername(null);
         return false;
       }
+      setUsername(null);
+      return true;
     } catch (error) {
       console.error(error.response.data.errors);
       alert(error.response.data.errors);
@@ -84,7 +86,7 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, login, register, logout, username, setIsAuthenticated}}
+      value={{ isAuthenticated, login, register, logout, username, setIsAuthenticated, setUsername}}
     >
       {children}
     </AuthContext.Provider>

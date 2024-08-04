@@ -190,7 +190,6 @@ Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\b
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\bin\Debug\net8.0\System.Composition.Hosting.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\bin\Debug\net8.0\System.Composition.Runtime.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\bin\Debug\net8.0\System.Composition.TypedParts.dll
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\bin\Debug\net8.0\System.Text.Json.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll

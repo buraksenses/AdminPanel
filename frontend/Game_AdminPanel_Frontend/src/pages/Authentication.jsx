@@ -7,10 +7,9 @@ import Spinner from "../components/Spinner";
 import {showSuccessToast, showWarningToast} from "../utils/notifications.js";
 
 function Authentication() {
-  const { login, register, setIsAuthenticated } = useAuth();
+  const { login, register, setIsAuthenticated, username, setUsername } = useAuth();
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -53,7 +52,12 @@ function Authentication() {
     const success = await register(username, password);
     setIsLoading(false);
     if (success) {
-      navigate("/auth", {replace: true});
+      showSuccessToast("Registered successfully!")
+      setUsername("");
+      setPassword("");
+      setEmail(null);
+      setConfirmPassword(null);
+      setIsLogin(true);
     } else {
       alert("Registration failed. Please try again.");
     }
@@ -93,6 +97,10 @@ function Authentication() {
               setEmail={setEmail}
               setUsername={setUsername}
               setPassword={setPassword}
+              username={username}
+              password={password}
+              confirmPassword={confirmPassword}
+              email={email}
           />
         </div>
       </div>

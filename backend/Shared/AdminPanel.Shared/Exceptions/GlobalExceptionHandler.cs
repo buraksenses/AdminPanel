@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace AdminPanel.Shared.Exceptions;
 
@@ -47,8 +47,8 @@ public class GlobalExceptionHandler
             StatusCode = context.Response.StatusCode,
             Message = exception.Message
         };
-        
-        var errorJson = JsonConvert.SerializeObject(errorDetails);
+
+        var errorJson = JsonSerializer.Serialize(errorDetails);
         await context.Response.WriteAsync(errorJson);
     }
 
@@ -61,6 +61,6 @@ public class ErrorDetails
 
     public override string ToString()
     {
-        return JsonConvert.SerializeObject(this);
+        return JsonSerializer.Serialize(this);
     }
 }
