@@ -17,6 +17,13 @@ function Modal() {
     availableBuildingTypes
   } = useConfig();
 
+  const handleCloseModal = () => {
+    setBuildingType("");
+    setBuildingCost("");
+    setConstructionTime("");
+    setShowModal(false);
+  }
+
   return (
       <div className="modal">
         <div className="modal-content">
@@ -61,7 +68,7 @@ function Modal() {
             ) : (
                 <button onClick={handleUpdateConfiguration}>Update</button>
             )}
-            <button onClick={() => setShowModal(false)}>Cancel</button>
+            <button onClick={() => handleCloseModal()}>Cancel</button>
           </div>
         </div>
       </div>
