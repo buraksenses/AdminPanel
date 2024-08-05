@@ -43,10 +43,8 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredUniqueChars = 1;
 });
 
-if (builder.Environment.IsDevelopment())
-{
-    builder.Configuration.AddUserSecrets<Program>();
-}
+
+//builder.Configuration.AddUserSecrets<Program>();
 
 var jwtKey = builder.Configuration["Jwt:Key"];
 var jwtIssuer = builder.Configuration["Jwt:Issuer"];
@@ -77,12 +75,8 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseMiddleware<GlobalExceptionHandler>();
 
@@ -90,7 +84,7 @@ app.UseCors("AllowSpecificOrigin");
 
 app.Use(async (context, next) =>
 {
-    var token = context.Request.Cookies["jwt"];
+    var token = context.Request.Cookies["accessToken"];
     if (!string.IsNullOrEmpty(token))
     {
         context.Request.Headers.Add("Authorization", "Bearer " + token);

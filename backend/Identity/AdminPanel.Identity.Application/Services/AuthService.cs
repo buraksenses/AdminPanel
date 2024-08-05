@@ -26,8 +26,11 @@ public class AuthService : IAuthService
 
     public async Task<Response<IdentityResult>> RegisterUserAsync(RegisterRequestDto requestDto)
     {
-        var user = ObjectMapper.Mapper.Map<User>(requestDto);
-        user.Email = requestDto.username;
+        var user = new User
+        {
+            Email = requestDto.username,
+            UserName = requestDto.username
+        };
         var result = await _userManager.CreateAsync(user, requestDto.password);
 
         if (!result.Succeeded)

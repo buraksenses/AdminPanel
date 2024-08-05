@@ -242,3 +242,4 @@ Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\b
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.API\bin\Debug\net8.0\appsettings.Production.json

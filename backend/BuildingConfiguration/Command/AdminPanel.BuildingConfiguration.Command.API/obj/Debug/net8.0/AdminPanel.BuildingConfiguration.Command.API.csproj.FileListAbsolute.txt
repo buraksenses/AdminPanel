@@ -78,3 +78,4 @@ Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\Admi
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+Z:\.NETProjects\AdminPanel\AdminPanel\backend\BuildingConfiguration\Command\AdminPanel.BuildingConfiguration.Command.API\bin\Debug\net8.0\appsettings.Production.json

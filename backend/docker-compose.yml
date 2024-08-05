@@ -3,73 +3,60 @@ version: '3.8'
 services:
   rabbitmq:
     image: rabbitmq:management
-    environment:
-      RABBITMQ_DEFAULT_USER: guest
-      RABBITMQ_DEFAULT_PASS: guest
-    ports:
-      - "5672:5672" 
-      - "15672:15672" 
     volumes:
       - "rabbitmq_data:/var/lib/rabbitmq"
-    networks:
-      - adminpanelnet
-  
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Password12*"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_volume:/var/opt/mssql
+  mongodb:
+    image: mongo:latest
+    container_name: Building_db
+    volumes:
+      - mongodata:/data/db
+    ports:
+      - "27017:27017"
   identity_api:
     build:
       context: .
       dockerfile: Dockerfile.Identity
+    container_name: Identity-api
     ports:
-      - "5218:8080"
-    depends_on:
-      - sqlserver_db
-    networks:
-      - adminpanelnet
-
-  sqlserver_db:
-    image: mcr.microsoft.com/mssql/server:2019-latest
+      - "5218:80"
     environment:
-      ACCEPT_EULA: "Y"
-      SA_PASSWORD: "Password12*"
-    ports:
-      - "1499:1433"
-    networks:
-      - adminpanelnet
-
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80
+    depends_on:
+      - sqlserver
   command_api:
     build:
       context: .
       dockerfile: Dockerfile.BuildingConfiguration.Command
+    container_name: Building_Command-api
     ports:
-      - "5228:8080"
-    depends_on:
-      - mongodb
-    networks:
-      - adminpanelnet
-
+      - "5228:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80
   query_api:
     build:
       context: .
       dockerfile: Dockerfile.BuildingConfiguration.Query
+    container_name: Building_Query-api
     ports:
-      - "5129:8080"
-    depends_on:
-      - mongodb
-    networks:
-      - adminpanelnet
-
-  mongodb:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongodata:/data/db
-    networks:
-      - adminpanelnet
-
+      - "5129:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80
 volumes:
   mongodata:
   rabbitmq_data:
-
-networks:
-  adminpanelnet:
-    driver: bridge
+  sqlserver_volume:
