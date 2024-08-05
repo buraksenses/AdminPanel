@@ -1,0 +1,49 @@
+version: "3.8"
+services:
+  buildingdb:
+    container_name: buildingdb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - buildingdb_volume:/data/db
+  identitydb:
+    container_name: identitydb
+    restart: always
+    ports:
+      - "1433:1433"
+    volumes:
+      - identitydb_volume:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password12*
+  rabbitmq:
+    container_name: rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+  identity.api:
+    container_name: identity.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - "ConnectionStrings:UserConnectionString=Server=identitydb,1433;Database=UserDb;User Id=sa;Password=Password12*;TrustServerCertificate=True"
+    ports:
+      - "5218:8080"
+    depends_on:
+      - identitydb
+  building-command.api:
+    container_name: building-command.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    ports:
+      - "5228:8080"
+    depends_on:
+      - buildingdb
+  building-query.api:
+    container_name: building-query.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    ports:
+      - "5129:8080"
+    depends_on:
+      - buildingdb

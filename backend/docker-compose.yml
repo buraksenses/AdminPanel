@@ -1,62 +1,26 @@
-version: '3.8'
-
+version: "3.8"
 services:
+  buildingdb:
+    image: mongo
+  identitydb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
   rabbitmq:
     image: rabbitmq:management
-    volumes:
-      - "rabbitmq_data:/var/lib/rabbitmq"
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-  sqlserver:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    environment:
-      ACCEPT_EULA: "Y"
-      MSSQL_SA_PASSWORD: "Password12*"
-    ports:
-      - "1433:1433"
-    volumes:
-      - sqlserver_volume:/var/opt/mssql
-  mongodb:
-    image: mongo:latest
-    container_name: Building_db
-    volumes:
-      - mongodata:/data/db
-    ports:
-      - "27017:27017"
-  identity_api:
+  identity.api:
+    image: identity_api_image
     build:
       context: .
-      dockerfile: Dockerfile.Identity
-    container_name: Identity-api
-    ports:
-      - "5218:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Production
-      - ASPNETCORE_URLS=http://+:80
-    depends_on:
-      - sqlserver
-  command_api:
+      dockerfile: Identity/AdminPanel.Identity.API/Dockerfile
+  building-command.api:
+    image: building-command_api_image
     build:
       context: .
-      dockerfile: Dockerfile.BuildingConfiguration.Command
-    container_name: Building_Command-api
-    ports:
-      - "5228:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Production
-      - ASPNETCORE_URLS=http://+:80
-  query_api:
+      dockerfile: BuildingConfiguration/Command/AdminPanel.BuildingConfiguration.Command.API/Dockerfile
+  building-query.api:
+    image: building-query_api_image
     build:
       context: .
-      dockerfile: Dockerfile.BuildingConfiguration.Query
-    container_name: Building_Query-api
-    ports:
-      - "5129:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Production
-      - ASPNETCORE_URLS=http://+:80
+      dockerfile: BuildingConfiguration/Query/AdminPanel.BuildingConfiguration.Query.API/Dockerfile
 volumes:
-  mongodata:
-  rabbitmq_data:
-  sqlserver_volume:
+  buildingdb_volume:
+  identitydb_volume:
