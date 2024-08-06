@@ -10,16 +10,3 @@ Z:\.NETProjects\AdminPanel\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\
 Z:\.NETProjects\AdminPanel\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\refint\AdminPanel.Identity.Domain.dll
 Z:\.NETProjects\AdminPanel\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\AdminPanel.Identity.Domain.pdb
 Z:\.NETProjects\AdminPanel\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\ref\AdminPanel.Identity.Domain.dll
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\bin\Debug\net8.0\AdminPanel.Identity.Domain.deps.json
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\bin\Debug\net8.0\AdminPanel.Identity.Domain.dll
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\bin\Debug\net8.0\AdminPanel.Identity.Domain.pdb
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\AdminPanel.Identity.Domain.csproj.AssemblyReference.cache
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\AdminPanel.Identity.Domain.GeneratedMSBuildEditorConfig.editorconfig
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\AdminPanel.Identity.Domain.AssemblyInfoInputs.cache
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\AdminPanel.Identity.Domain.AssemblyInfo.cs
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\AdminPanel.Identity.Domain.csproj.CoreCompileInputs.cache
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\AdminPanel.Identity.Domain.sourcelink.json
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\AdminPanel.Identity.Domain.dll
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\refint\AdminPanel.Identity.Domain.dll
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\AdminPanel.Identity.Domain.pdb
-Z:\.NETProjects\AdminPanel\AdminPanel\backend\Identity\AdminPanel.Identity.Domain\obj\Debug\net8.0\ref\AdminPanel.Identity.Domain.dll
