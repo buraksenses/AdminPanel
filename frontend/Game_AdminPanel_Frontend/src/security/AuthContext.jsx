@@ -1,10 +1,10 @@
-import axios from "axios";
 import {createContext, useContext, useEffect, useState} from "react";
 import {getToken, isTokenExpired, removeToken, setToken} from "../utils/auth.jsx";
 import {showWarningToast} from "../utils/notifications.js";
 import {useLocation} from "react-router-dom";
 import Cookies from "js-cookie";
 import apiClient from "../api/GameApiService.jsx";
+import {identityBaseURL} from "../config.js";
 
 const AuthContext = createContext();
 
@@ -16,15 +16,6 @@ function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(token && !isTokenExpired(token));
   const [username, setUsername] = useState(null);
   const [isLogin, setIsLogin] = useState(true);
-
-  /*useEffect(() => {
-    const token = getToken();
-    if (token && !isTokenExpired(token)) {
-      setIsAuthenticated(true);
-    } else {
-      removeToken();
-    }
-  }, []);*/
 
   useEffect(() => {
     const refreshAccessToken = async () => {
@@ -48,7 +39,7 @@ function AuthProvider({ children }) {
           }
         }
 
-        const response = await apiClient.post('https://cbewzfrmej.eu-central-1.awsapprunner.com/api/Auth/refresh-token', {});
+        const response = await apiClient.post(`${identityBaseURL}/api/Auth/refresh-token`, {});
 
         const { accessToken, cookieOptions } = response.data.data;
         setToken(accessToken, 'accessToken', {
@@ -74,8 +65,8 @@ function AuthProvider({ children }) {
 
   async function login(username, password) {
     try {
-      const response = await axios.post(
-          "https://cbewzfrmej.eu-central-1.awsapprunner.com/api/Auth/login",
+      const response = await apiClient.post(
+          `${identityBaseURL}/api/Auth/login`,
           {
             username,
             password,
@@ -84,8 +75,8 @@ function AuthProvider({ children }) {
 
       if (response.data !== null) {
         setUsername(username);
-        setToken(response.data.data.accessToken, 'accessToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.cookieOptions.expires)});
-        setToken(response.data.data.refreshToken.token, 'refreshToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.refreshToken.expires)});
+        //setToken(response.data.data.accessToken, 'accessToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.cookieOptions.expires)});
+        //setToken(response.data.data.refreshToken.token, 'refreshToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.refreshToken.expires)});
         setIsAuthenticated(true);
         return true;
       } else {
@@ -102,8 +93,8 @@ function AuthProvider({ children }) {
 
   async function register(username, password) {
     try {
-      const response = await axios.post(
-        "https://cbewzfrmej.eu-central-1.awsapprunner.com/api/Auth/register",
+      const response = await apiClient.post(
+        `${identityBaseURL}/api/Auth/register`,
         {
           username,
           password

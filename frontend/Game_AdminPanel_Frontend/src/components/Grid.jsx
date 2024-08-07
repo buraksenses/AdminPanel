@@ -1,7 +1,6 @@
 import { useConfig } from "../Contexts/ConfigurationsContext";
 import {BuildingTypeLabels} from "../enums/Enums.js";
 
-
 function Grid() {
   const {
     configurations,
