@@ -20,10 +20,10 @@ builder.Services.AddMassTransit(x =>
 
     x.UsingRabbitMq((context, cfg) =>
     {
-        cfg.Host(new Uri("rabbitmq://rabbitmq"), h =>
+        cfg.Host(new Uri("amqps://b-e8a3e19e-49a5-41aa-9170-7ffacadb2865.mq.eu-north-1.amazonaws.com:5671"), h =>
         {
-            h.Username("guest");
-            h.Password("guest");
+            h.Username("admin");
+            h.Password("Burack8888.!");
         });
 
         cfg.ReceiveEndpoint("building-create-queue", e =>

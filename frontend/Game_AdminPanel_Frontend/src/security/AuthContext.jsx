@@ -47,7 +47,7 @@ function AuthProvider({ children }) {
           }
         }
 
-        const response = await apiClient.post('http://localhost:5218/api/Auth/refresh-token', {});
+        const response = await apiClient.post('https://cbewzfrmej.eu-central-1.awsapprunner.com/api/Auth/refresh-token', {});
 
         const { accessToken, cookieOptions } = response.data.data;
         setToken(accessToken, 'accessToken', {
@@ -74,7 +74,7 @@ function AuthProvider({ children }) {
   async function login(username, password) {
     try {
       const response = await axios.post(
-          "http://localhost:5218/api/Auth/login",
+          "https://cbewzfrmej.eu-central-1.awsapprunner.com/api/Auth/login",
           {
             username,
             password,
@@ -102,7 +102,7 @@ function AuthProvider({ children }) {
   async function register(username, password) {
     try {
       const response = await axios.post(
-        "http://localhost:5218/api/Auth/register",
+        "https://cbewzfrmej.eu-central-1.awsapprunner.com/api/Auth/register",
         {
           username,
           password

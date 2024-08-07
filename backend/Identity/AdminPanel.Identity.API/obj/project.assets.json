@@ -1962,6 +1962,7 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.7",
           "Microsoft.EntityFrameworkCore": "8.0.7",
           "Microsoft.IdentityModel.Tokens": "7.1.2",
+          "MySql.EntityFrameworkCore": "8.0.5",
           "System.IdentityModel.Tokens.Jwt": "7.1.2"
         },
         "compile": {

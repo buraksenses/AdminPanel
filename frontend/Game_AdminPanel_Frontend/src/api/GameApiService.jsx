@@ -2,7 +2,7 @@ import axios from 'axios';
 import {getToken, isTokenExpired, removeToken, setToken} from '../utils/auth.jsx';
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:5228',
+    baseURL: 'https://ct2zeah5sb.eu-central-1.awsapprunner.com',
     withCredentials: true
 });
 
@@ -35,7 +35,7 @@ apiClient.interceptors.response.use(
         const originalRequest = error.config;
         if (error.response.status === 401) {
             try {
-                const response = await apiClient.post('http://localhost:5218/api/Auth/refresh-token', {});
+                const response = await apiClient.post('https://cbewzfrmej.eu-central-1.awsapprunner.com/api/Auth/refresh-token', {});
                 const newToken = response.data.data.accessToken;
 
                 const inOneMinute = new Date(new Date().getTime() + 60 * 1000);

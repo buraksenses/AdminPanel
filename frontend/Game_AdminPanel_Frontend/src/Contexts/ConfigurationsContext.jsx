@@ -9,8 +9,8 @@ import apiClient from "../api/GameApiService.jsx";
 import {showInfoToast, showSuccessToast, showWarningToast} from "../utils/notifications.js";
 import {useAuth} from "../security/AuthContext.jsx";
 
-const READ_BASE_URL = "http://localhost:5129";
-const WRITE_BASE_URL = "http://localhost:5228";
+const READ_BASE_URL = "https://nuxcyceqpy.eu-central-1.awsapprunner.com";
+const WRITE_BASE_URL = "https://ct2zeah5sb.eu-central-1.awsapprunner.com";
 
 const buildingTypes = [
   { type: BuildingType.Farm, icon: farmIcon },
@@ -80,7 +80,7 @@ function ConfigurationsProvider({ children }) {
         setIsLoading(false);
       }
     }
-    fetchConfigurations();
+    fetchConfigurations().then();
   }, [isLogin]);
 
   const handleAddConfiguration = async () => {
