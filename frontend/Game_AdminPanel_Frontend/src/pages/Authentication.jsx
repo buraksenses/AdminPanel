@@ -1,10 +1,10 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import "../App.css";
-import { useAuth } from "../security/AuthContext";
+import { useAuth } from "../Contexts/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import Spinner from "../components/Spinner";
-import {showSuccessToast, showWarningToast} from "../utils/notifications.js";
+import {showSuccessToast} from "../utils/notifications.js";
 
 function Authentication() {
   const { login, register, setIsAuthenticated, username, setUsername, isLogin, setIsLogin } = useAuth();

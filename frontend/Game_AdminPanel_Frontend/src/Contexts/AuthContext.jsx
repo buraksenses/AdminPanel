@@ -1,10 +1,10 @@
 import {createContext, useContext, useEffect, useState} from "react";
-import {getToken, isTokenExpired, removeToken, setToken} from "../utils/auth.jsx";
+import {getToken, isTokenExpired, removeToken, setToken} from "../utils/auth.js";
 import {showWarningToast} from "../utils/notifications.js";
 import {useLocation} from "react-router-dom";
 import Cookies from "js-cookie";
 import apiClient from "../api/GameApiService.jsx";
-import {identityBaseURL} from "../config.js";
+import {identityBaseURL} from "../utils/config.js";
 
 const AuthContext = createContext();
 
@@ -75,8 +75,8 @@ function AuthProvider({ children }) {
 
       if (response.data !== null) {
         setUsername(username);
-        //setToken(response.data.data.accessToken, 'accessToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.cookieOptions.expires)});
-        //setToken(response.data.data.refreshToken.token, 'refreshToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.refreshToken.expires)});
+        setToken(response.data.data.accessToken, 'accessToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.cookieOptions.expires)});
+        setToken(response.data.data.refreshToken.token, 'refreshToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.refreshToken.expires)});
         setIsAuthenticated(true);
         return true;
       } else {

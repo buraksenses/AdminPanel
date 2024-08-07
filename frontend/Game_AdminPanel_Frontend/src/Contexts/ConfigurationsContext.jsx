@@ -4,9 +4,9 @@ import lumbermillIcon from "../../public/lumbermill.png";
 import barracksIcon from "../../public/barracks.png";
 import academyIcon from "../../public/academy.png";
 import headquartersIcon from "../../public/headquarters.png";
-import {BuildingType} from "../enums/Enums.js";
+import {BuildingType} from "../enums/enums.js";
 import {showWarningToast} from "../utils/notifications.js";
-import {useAuth} from "../security/AuthContext.jsx";
+import {useAuth} from "./AuthContext.jsx";
 import {
   addConfiguration,
   getConfigurations,

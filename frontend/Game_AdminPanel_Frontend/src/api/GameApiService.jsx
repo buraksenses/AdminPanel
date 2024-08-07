@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {getToken, isTokenExpired, removeToken, setToken} from '../utils/auth.jsx';
-import {identityBaseURL} from "../config.js";
+import {getToken, isTokenExpired, removeToken, setToken} from '../utils/auth.js';
+import {identityBaseURL} from "../utils/config.js";
 
 const apiClient = axios.create({
     withCredentials: true
@@ -38,7 +38,7 @@ apiClient.interceptors.response.use(
                 const response = await apiClient.post(`${identityBaseURL}/api/auth/refresh-token`, {});
                 const newToken = response.data.data.accessToken;
 
-                //setToken(newToken, 'accessToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.cookieOptions.expires)});
+                setToken(newToken, 'accessToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.cookieOptions.expires)});
                 apiClient.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
 
                 return apiClient.request(originalRequest);

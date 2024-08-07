@@ -1,7 +1,7 @@
 import apiClient from "../api/GameApiService.jsx";
 import {showSuccessToast} from "./notifications.js";
-import {BuildingType, BuildingTypeLabels, BuildingTypeStringToInt} from "../enums/Enums.js";
-import {readBaseURL, writeBaseURL} from "../config.js";
+import {BuildingType, BuildingTypeLabels, BuildingTypeStringToInt} from "../enums/enums.js";
+import {readBaseURL, writeBaseURL} from "./config.js";
 
 export const addConfiguration = async (configurations,
                                        setConfigurations,

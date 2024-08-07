@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Authentication from "./pages/Authentication";
 import BuildingConfig from "./pages/BuildingConfig";
 import PrivateRoute from './components/PrivateRoute';
-import {AuthProvider} from "./security/AuthContext";
+import {AuthProvider} from "./Contexts/AuthContext.jsx";
 import {ConfigurationsProvider} from "./Contexts/ConfigurationsContext";
 import { NavigateProvider } from './Contexts/NavigateContext.jsx';
 import PublicRoute from "./components/PublicRoute.jsx";

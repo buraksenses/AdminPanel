@@ -1,5 +1,5 @@
 import { useConfig } from "../Contexts/ConfigurationsContext";
-import {BuildingTypeLabels} from "../enums/Enums.js";
+import {BuildingTypeLabels} from "../enums/enums.js";
 
 function Modal() {
   const {
