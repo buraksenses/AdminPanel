@@ -15,6 +15,7 @@ function AuthProvider({ children }) {
   const location = useLocation();
   const [isAuthenticated, setIsAuthenticated] = useState(token && !isTokenExpired(token));
   const [username, setUsername] = useState(null);
+  const [isLogin, setIsLogin] = useState(true);
 
   /*useEffect(() => {
     const token = getToken();
@@ -134,7 +135,7 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, login, register, logout, username, setIsAuthenticated, setUsername}}
+      value={{ isLogin, setIsLogin, isAuthenticated, login, register, logout, username, setIsAuthenticated, setUsername}}
     >
       {children}
     </AuthContext.Provider>

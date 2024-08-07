@@ -7,9 +7,8 @@ import Spinner from "../components/Spinner";
 import {showSuccessToast, showWarningToast} from "../utils/notifications.js";
 
 function Authentication() {
-  const { login, register, setIsAuthenticated, username, setUsername } = useAuth();
+  const { login, register, setIsAuthenticated, username, setUsername, isLogin, setIsLogin } = useAuth();
   const navigate = useNavigate();
-  const [isLogin, setIsLogin] = useState(true);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
