@@ -24,9 +24,9 @@ public class TokenRepository : ITokenRepository
         _cookieOptions = new CookieOptions
         {
             HttpOnly = true,
-            Secure = false,
-            SameSite = SameSiteMode.Strict,
-            Expires = DateTime.UtcNow.AddMinutes(1)
+            Secure = true,
+            SameSite = SameSiteMode.None,
+            Expires = DateTime.UtcNow.AddMinutes(60)
         };
     }
     
@@ -44,7 +44,7 @@ public class TokenRepository : ITokenRepository
         var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],
             _configuration["Jwt:Audience"],
             claims,
-            expires: DateTime.Now.AddMinutes(1),
+            expires: DateTime.Now.AddMinutes(60),
             signingCredentials: credentials);
 
         return (new JwtSecurityTokenHandler().WriteToken(token), _cookieOptions);
@@ -79,7 +79,7 @@ public class TokenRepository : ITokenRepository
         return new RefreshToken
         {
             Token = Convert.ToBase64String(randomNumber),
-            Expires = DateTime.UtcNow.AddMinutes(3),
+            Expires = DateTime.UtcNow.AddDays(20),
             Created = DateTime.UtcNow
         };
     }

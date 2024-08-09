@@ -4,14 +4,14 @@ import lumbermillIcon from "../../public/lumbermill.png";
 import barracksIcon from "../../public/barracks.png";
 import academyIcon from "../../public/academy.png";
 import headquartersIcon from "../../public/headquarters.png";
-import {BuildingType} from "../enums/enums.js";
-import {showWarningToast} from "../utils/notifications.js";
-import {useAuth} from "./AuthContext.jsx";
+import { BuildingType } from "../enums/enums.js";
+import { showWarningToast } from "../utils/notifications.js";
+import { useAuth } from "./AuthContext.jsx";
 import {
   addConfiguration,
   getConfigurations,
   removeConfiguration,
-  updateConfiguration
+  updateConfiguration,
 } from "../utils/configurationService.js";
 
 const buildingTypes = [
@@ -35,7 +35,7 @@ function ConfigurationsProvider({ children }) {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [newConfigIndex, setNewConfigIndex] = useState(null);
-  const {setIsAuthenticated, isLogin} = useAuth();
+  const { setIsAuthenticated, isAuthenticated } = useAuth();
 
   useEffect(() => {
     if (newConfigIndex !== null) {
@@ -47,27 +47,58 @@ function ConfigurationsProvider({ children }) {
     }
   }, [newConfigIndex]);
 
-
-  useEffect(function () {
-    async function fetchConfigurations() {
-      await getConfigurations(isLogin, setIsLoading, setConfigurations);
-    }
-    fetchConfigurations();
-  }, [isLogin]);
+  useEffect(
+    function () {
+      async function fetchConfigurations() {
+        await getConfigurations(
+          isAuthenticated,
+          setIsLoading,
+          setConfigurations
+        );
+      }
+      fetchConfigurations();
+    },
+    [isAuthenticated]
+  );
 
   const handleAddConfiguration = async () => {
-    await addConfiguration(configurations, setConfigurations, setNewConfigIndex, buildingType
-    ,setError, checkSessionExpired, buildingCost, constructionTime, reset);
+    await addConfiguration(
+      configurations,
+      setConfigurations,
+      setNewConfigIndex,
+      buildingType,
+      setError,
+      checkSessionExpired,
+      buildingCost,
+      constructionTime,
+      reset,
+      setIsLoading
+    );
   };
 
   const handleUpdateConfiguration = async () => {
-    await updateConfiguration(buildingCost,buildingType,constructionTime,
-        selectedConfig,configurations,setError,setConfigurations,reset,checkSessionExpired);
+    await updateConfiguration(
+      buildingCost,
+      constructionTime,
+      selectedConfig,
+      configurations,
+      setError,
+      setConfigurations,
+      reset,
+      checkSessionExpired,
+      setIsLoading
+    );
   };
 
   const handleRemoveConfiguration = async (configToRemove) => {
-    await removeConfiguration(configurations,configToRemove,setConfigurations,checkSessionExpired
-    ,setError,buildingType,buildingCost,constructionTime);
+    await removeConfiguration(
+      configurations,
+      configToRemove,
+      setConfigurations,
+      checkSessionExpired,
+      setError,
+      setIsLoading
+    );
   };
 
   const openUpdateModal = (config) => {
@@ -85,23 +116,23 @@ function ConfigurationsProvider({ children }) {
 
   const reset = () => {
     setShowModal(false);
-    setModalType('');
-    setBuildingCost('');
-    setConstructionTime('');
-    setBuildingType('');
-    setError('');
+    setModalType("");
+    setBuildingCost("");
+    setConstructionTime("");
+    setBuildingType("");
+    setError("");
     setSelectedConfig(null);
-  }
+  };
 
   const checkSessionExpired = (error) => {
-    if (error.message === 'Session expired!') {
-      showWarningToast("Your session has expired!")
+    if (error.message === "Session expired!") {
+      showWarningToast("Your session has expired!");
       setIsAuthenticated(false);
       reset();
       return true;
     }
     return false;
-  }
+  };
 
   return (
     <ConfigurationsContext.Provider

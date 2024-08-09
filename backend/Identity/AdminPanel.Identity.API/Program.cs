@@ -66,12 +66,13 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", builder =>
     {
-        builder.WithOrigins("http://localhost:5173")
+        builder.WithOrigins("https://panteonadminpanel.netlify.app")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials();
     });
 });
+
 
 var app = builder.Build();
 
@@ -82,6 +83,14 @@ app.UseMiddleware<GlobalExceptionHandler>();
 
 app.UseCors("AllowSpecificOrigin");
 
+app.UseHttpsRedirection();
+
+app.UseAuthentication();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
 app.Use(async (context, next) =>
 {
     var token = context.Request.Cookies["accessToken"];
@@ -91,10 +100,6 @@ app.Use(async (context, next) =>
     }
     await next();
 });
-
-app.UseAuthentication();
-
-app.MapControllers();
 
 using(var scope = app.Services.CreateScope()){
     var serviceProvider = scope.ServiceProvider;

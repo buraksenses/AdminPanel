@@ -1,13 +1,21 @@
-import {useState} from "react";
-import "../App.css";
+import { useState } from "react";
 import { useAuth } from "../Contexts/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import Spinner from "../components/Spinner";
-import {showSuccessToast} from "../utils/notifications.js";
+import { showSuccessToast } from "../utils/notifications.js";
+import styles from "./Authentication.module.css";
 
 function Authentication() {
-  const { login, register, setIsAuthenticated, username, setUsername, isLogin, setIsLogin } = useAuth();
+  const {
+    login,
+    register,
+    setIsAuthenticated,
+    username,
+    setUsername,
+    isLogin,
+    setIsLogin,
+  } = useAuth();
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -34,8 +42,8 @@ function Authentication() {
     setIsLoading(false);
     if (success) {
       setIsAuthenticated(true);
-      showSuccessToast(`Logged in successfully! Welcome ${username}`)
-      navigate("/dashboard", {replace: true});
+      showSuccessToast(`Logged in successfully! Welcome ${username}`);
+      navigate("/dashboard", { replace: true });
     } else {
       alert("Login failed. Please check your username and password.");
     }
@@ -51,7 +59,7 @@ function Authentication() {
     const success = await register(username, password);
     setIsLoading(false);
     if (success) {
-      showSuccessToast("Registered successfully!")
+      showSuccessToast("Registered successfully!");
       setUsername("");
       setPassword("");
       setEmail(null);
@@ -72,37 +80,39 @@ function Authentication() {
   };
 
   return (
-      <div className="auth-container">
-        {isLoading && <Spinner />}
-        <div className={`auth-box ${isLoading ? 'loading' : ''}`}>
-          <div className="toggle-switch">
+    <div className={styles.authContainer}>
+      {isLoading && <Spinner />}
+      <div className={`${styles.authBox} ${isLoading ? styles.loading : ""}`}>
+        <div className={styles.toggleSwitch}>
           <span
-              className={`toggle-button ${isLogin ? "active" : ""}`}
-              onClick={() => setIsLogin(true)}
+            className={`${styles.toggleButton} ${isLogin ? styles.active : ""}`}
+            onClick={() => setIsLogin(true)}
           >
             Login
           </span>
-            <span
-                className={`toggle-button ${!isLogin ? "active" : ""}`}
-                onClick={() => setIsLogin(false)}
-            >
+          <span
+            className={`${styles.toggleButton} ${
+              !isLogin ? styles.active : ""
+            }`}
+            onClick={() => setIsLogin(false)}
+          >
             Register
           </span>
-          </div>
-          <LoginForm
-              handleSubmit={handleSubmit}
-              setConfirmPassword={setConfirmPassword}
-              isLogin={isLogin}
-              setEmail={setEmail}
-              setUsername={setUsername}
-              setPassword={setPassword}
-              username={username}
-              password={password}
-              confirmPassword={confirmPassword}
-              email={email}
-          />
         </div>
+        <LoginForm
+          handleSubmit={handleSubmit}
+          setConfirmPassword={setConfirmPassword}
+          isLogin={isLogin}
+          setEmail={setEmail}
+          setUsername={setUsername}
+          setPassword={setPassword}
+          username={username}
+          password={password}
+          confirmPassword={confirmPassword}
+          email={email}
+        />
       </div>
+    </div>
   );
 }
 

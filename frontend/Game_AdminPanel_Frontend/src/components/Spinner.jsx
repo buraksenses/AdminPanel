@@ -1,10 +1,10 @@
-import '../Spinner.css';
+import styles from "./Spinner.module.css";
 function Spinner() {
-    return (
-        <div className="spinner-overlay">
-            <div className="spinner"/>
-        </div>
-    );
+  return (
+    <div className={styles.spinnerOverlay}>
+      <div className={styles.spinner} />
+    </div>
+  );
 }
 
 export default Spinner;

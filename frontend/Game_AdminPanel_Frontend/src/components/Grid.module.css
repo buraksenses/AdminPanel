@@ -1,0 +1,104 @@
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.newItemAnimation {
+  animation: grow 0.5s ease forwards;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gridItem {
+  position: relative;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(206, 191, 123, 0.6);
+  font-family: "MedievalSharp", Arial, sans-serif;
+}
+
+.gridItem img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.gridItemDetails {
+  padding: 10px;
+}
+
+.gridItemDetails h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.gridItemDetails p {
+  margin: 5px 0;
+}
+
+.gridItem:hover .overlay {
+  display: flex;
+}
+
+.addItem {
+  height: 325px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 48px;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.addItem .plusSign {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.addItem:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.overlay button {
+  background-color: #8b4513;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+  font-family: "MedievalSharp", Arial, sans-serif;
+}
+
+.overlay button:hover {
+  background-color: #a0522d;
+}

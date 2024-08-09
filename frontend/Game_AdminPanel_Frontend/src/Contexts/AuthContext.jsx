@@ -1,10 +1,15 @@
-import {createContext, useContext, useEffect, useState} from "react";
-import {getToken, isTokenExpired, removeToken, setToken} from "../utils/auth.js";
-import {showWarningToast} from "../utils/notifications.js";
-import {useLocation} from "react-router-dom";
+import { createContext, useContext, useEffect, useState } from "react";
+import {
+  getToken,
+  isTokenExpired,
+  removeToken,
+  setToken,
+} from "../utils/auth.js";
+import { showWarningToast } from "../utils/notifications.js";
+import { useLocation } from "react-router-dom";
 import Cookies from "js-cookie";
 import apiClient from "../api/GameApiService.jsx";
-import {identityBaseURL} from "../utils/config.js";
+import { identityBaseURL } from "../utils/config.js";
 
 const AuthContext = createContext();
 
@@ -13,7 +18,9 @@ const useAuth = () => useContext(AuthContext);
 function AuthProvider({ children }) {
   const token = getToken();
   const location = useLocation();
-  const [isAuthenticated, setIsAuthenticated] = useState(token && !isTokenExpired(token));
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    token && !isTokenExpired(token)
+  );
   const [username, setUsername] = useState(null);
   const [isLogin, setIsLogin] = useState(true);
 
@@ -26,9 +33,9 @@ function AuthProvider({ children }) {
           return;
         }
 
-        const refreshToken = Cookies.get('refreshToken');
+        const refreshToken = Cookies.get("refreshToken");
         if (!refreshToken) {
-          if (location.pathname === '/dashboard') {
+          if (location.pathname === "/dashboard") {
             removeToken();
             setIsAuthenticated(false);
             throw new Error("Session expired!");
@@ -39,22 +46,24 @@ function AuthProvider({ children }) {
           }
         }
 
-        const response = await apiClient.post(`${identityBaseURL}/api/Auth/refresh-token`, {});
+        const response = await apiClient.post(
+          `${identityBaseURL}/api/Auth/refresh-token`,
+          {}
+        );
 
         const { accessToken, cookieOptions } = response.data.data;
-        setToken(accessToken, 'accessToken', {
+        setToken(accessToken, "accessToken", {
           secure: true,
-          sameSite: 'Strict',
-          expires: new Date(cookieOptions.expires)
+          sameSite: "Strict",
+          expires: new Date(cookieOptions.expires),
         });
         setIsAuthenticated(true);
-
       } catch (error) {
         console.error("Authentication refresh failed", error);
         removeToken();
         setIsAuthenticated(false);
-        if (location.pathname === '/dashboard') {
-          showWarningToast("Session expired!")
+        if (location.pathname === "/dashboard") {
+          showWarningToast("Session expired!");
         }
       }
     };
@@ -62,21 +71,28 @@ function AuthProvider({ children }) {
     refreshAccessToken();
   }, []);
 
-
   async function login(username, password) {
     try {
       const response = await apiClient.post(
-          `${identityBaseURL}/api/Auth/login`,
-          {
-            username,
-            password,
-          }
+        `${identityBaseURL}/api/Auth/login`,
+        {
+          username,
+          password,
+        }
       );
 
       if (response.data !== null) {
         setUsername(username);
-        setToken(response.data.data.accessToken, 'accessToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.cookieOptions.expires)});
-        setToken(response.data.data.refreshToken.token, 'refreshToken', {secure: true, sameSite: 'Strict', expires: new Date(response.data.data.refreshToken.expires)});
+        setToken(response.data.data.accessToken, "accessToken", {
+          secure: true,
+          sameSite: "Strict",
+          expires: new Date(response.data.data.cookieOptions.expires),
+        });
+        setToken(response.data.data.refreshToken.token, "refreshToken", {
+          secure: true,
+          sameSite: "Strict",
+          expires: new Date(response.data.data.refreshToken.expires),
+        });
         setIsAuthenticated(true);
         return true;
       } else {
@@ -97,7 +113,7 @@ function AuthProvider({ children }) {
         `${identityBaseURL}/api/Auth/register`,
         {
           username,
-          password
+          password,
         }
       );
 
@@ -126,7 +142,17 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ isLogin, setIsLogin, isAuthenticated, login, register, logout, username, setIsAuthenticated, setUsername}}
+      value={{
+        isLogin,
+        setIsLogin,
+        isAuthenticated,
+        login,
+        register,
+        logout,
+        username,
+        setIsAuthenticated,
+        setUsername,
+      }}
     >
       {children}
     </AuthContext.Provider>

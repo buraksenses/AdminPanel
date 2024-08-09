@@ -1,7 +1,7 @@
-import "../ConfigurationPage.css";
 import Modal from "../components/Modal";
 import Grid from "../components/Grid";
 import { useConfig } from "../Contexts/ConfigurationsContext";
+import "../ConfigurationPage.css";
 
 const ConfigurationPage = () => {
   const { showModal } = useConfig();
